@@ -1,2 +1,5 @@
 User-agent: *
 Allow: /
+
+# Production crawl policy must be reviewed against the real deployed domain.
+Sitemap: /sitemap.xml
