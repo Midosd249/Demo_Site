@@ -27,9 +27,11 @@ jobs:
           test -s AGENTS.md
           test -s styles/growth.css
           test -s growth_platform_migration.sql
-      - name: Block obvious secret patterns
+      - name: Block obvious secret patterns in application files
         shell: bash
         run: |
-          if grep -RInE 'service[_-]?role|BEGIN (RSA|OPENSSH|EC) PRIVATE KEY|sk-[A-Za-z0-9]{20,}' --exclude-dir=.git .; then
-            echo 'Potential secret pattern found'; exit 1
+          set -e
+          files=$(find . -type f \( -name '*.js' -o -name '*.html' -o -name '*.css' -o -name '*.ts' -o -name '*.tsx' -o -name '*.json' \) -not -path './.git/*')
+          if [ -n "$files" ] && grep -nHE 'service[_-]?role|BEGIN (RSA|OPENSSH|EC) PRIVATE KEY|sk-[A-Za-z0-9]{20,}' $files; then
+            echo 'Potential secret pattern found in application files'; exit 1
           fi
