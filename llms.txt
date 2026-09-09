@@ -1,0 +1,12 @@
+# Demo_Site
+
+Website + Digital Growth Platform for Saudi/GCC SMBs.
+
+## Product
+- [README](https://github.com/Midosd249/Demo_Site/blob/refactor/website-growth-platform/README.md): product scope, truth rules and local test.
+- [AGENTS.md](https://github.com/Midosd249/Demo_Site/blob/refactor/website-growth-platform/AGENTS.md): operating and safety rules for coding agents.
+- [Data model](https://github.com/Midosd249/Demo_Site/blob/refactor/website-growth-platform/docs/DATA.md): additive Supabase growth data contract.
+- [QA checklist](https://github.com/Midosd249/Demo_Site/blob/refactor/website-growth-platform/QA_CHECKLIST.md): validation requirements.
+
+## Important
+This repository is the application source, not a public production deployment. Do not infer a public URL, rankings, customer data, or AI-model results from repository contents.

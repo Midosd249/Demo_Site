@@ -1,0 +1,37 @@
+name: Validate Growth Platform
+on:
+  push:
+    branches: [main, 'refactor/website-growth-platform']
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Validate JavaScript syntax
+        shell: bash
+        run: |
+          set -e
+          find src -type f -name '*.js' -print0 | xargs -0 -n1 node --check
+          node --check platform.js
+      - name: Validate core files
+        run: |
+          test -s index.html
+          test -s README.md
+          test -s AGENTS.md
+          test -s styles/growth.css
+          test -s growth_platform_migration.sql
+      - name: Block obvious secret patterns in active application
+        shell: bash
+        run: |
+          set -e
+          files="$(find src -type f -name '*.js' -o -name '*.ts' -o -name '*.tsx') index.html styles/growth.css platform.js"
+          if grep -nHE 'service[_-]?role|BEGIN (RSA|OPENSSH|EC) PRIVATE KEY|sk-[A-Za-z0-9]{20,}' $files; then
+            echo 'Potential secret pattern found in active application files'; exit 1
+          fi

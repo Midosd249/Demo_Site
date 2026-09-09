@@ -1,0 +1,3 @@
+import { db, currentSession } from '../lib/supabase.js';
+export function renderSettings(){return '<section class="card"><h2>الإعدادات</h2><div class="row"><span>اللغة الأساسية</span><b>العربية — RTL</b></div><div class="row"><span>English</span><b>جاهز</b></div><div class="row"><span>Supabase</span><span class="badge">'+(db?'متصل':'وضع محلي')+'</span></div><div class="row"><span>Research provider</span><span class="badge">اختياري</span></div><div id="sessionState" class="notice">جارٍ التحقق من الجلسة…</div></section>'}
+export async function wireSettings(){const s=await currentSession();const el=document.querySelector('#sessionState');if(el)el.textContent=s.error?'تعذر التحقق من الجلسة.':s.user?'جلسة مستخدم نشطة.':'لا توجد جلسة؛ الكتابة إلى البيانات محمية.'}
