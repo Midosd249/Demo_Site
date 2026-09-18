@@ -9,7 +9,7 @@ From repository root:
     node --check platform.js
     node scripts/validate-foundation.mjs
 
-Expected validator result: Foundation validation passed: 18 checks.
+Expected validator result: Foundation validation passed: 21 checks.
 
 ### Deterministic fixtures
 - tests/fixtures/seo-healthy.html: readable successful SEO fixture with title, description, one H1, canonical, robots, viewport and JSON-LD.
