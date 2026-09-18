@@ -1,17 +1,24 @@
 # Vercel deployment policy
 
-There is currently no Vercel project linked to `Midosd249/Demo_Site`. Do not invent a deployment URL.
+The Vercel project **demo-site** is linked to exactly `Midosd249/Demo_Site`.
 
-## After PR review
-1. Link only the existing `Midosd249/Demo_Site` repository.
-2. Use the `refactor/website-growth-platform` branch for a Preview while PR #2 is under review.
-3. Configure only public frontend variables required by the existing Supabase client. Never add a service-role key.
-4. Confirm the Preview URL loads the Arabic RTL shell and all routes.
-5. Only after review and explicit approval should production be considered.
+## Verified current state — 2026-09-18
 
-## Required verification
-- Build/deployment logs are successful.
-- Supabase auth and RLS work from the Preview.
-- SEO CORS/unavailable state remains honest.
-- No secret values appear in browser bundles.
-- Repository remains exactly `Midosd249/Demo_Site`.
+- Vercel project: `demo-site`
+- Project ID: `prj_rL5NKcNKJ7pZtCNPwvyPckYTetMT`
+- Team: `midosd2s-projects`
+- Node.js: 24.x
+- Latest production deployment: READY
+- Production commit: `c84f7a87eae32df109d48a504deae38f0439ef7f`
+- Production deployment URL: https://demo-site-b19gugabn-midosd2s-projects.vercel.app
+- Git-linked main alias: https://demo-site-git-main-midosd2s-projects.vercel.app
+- Preview branch deployments are being created for `audit-foundation`.
+
+## Release rules
+
+1. Keep the Vercel project linked only to `Midosd249/Demo_Site`.
+2. Use branch previews for validation; do not treat a branch preview as production.
+3. Never add a service-role key to frontend environment variables.
+4. Before production promotion, verify commit SHA, READY state, browser smoke checks and Supabase auth/RLS behavior.
+5. Do not invent a production URL; record only a URL returned by Vercel.
+6. Keep the current production deployment untouched until the replacement has passed validation.
