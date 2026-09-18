@@ -20,14 +20,14 @@ Create Website → Edit → Preview → Publish → Audit SEO → Improve Local 
 
 ## Builder
 
-The current builder is an expandable section editor, not a drag-and-drop canvas. It supports adding, editing, reordering, saving and previewing: Hero, About, Services, Map, Testimonials, FAQ, CTA and Contact sections. Data is stored in the `growth_websites.payload` JSON shape.
+The builder is an expandable section editor, not a drag-and-drop canvas. It supports adding, editing, reordering, saving and previewing sections. Website content is stored in the `growth_websites.payload` JSON shape.
 
 ## Truth and privacy rules
 
-- No fabricated production numbers or rankings.
+- No fabricated production numbers, rankings, reviews, traffic, conversions or AI-model results.
 - CORS/network failure during an SEO fetch is an unavailable result, not a score.
 - Local Visibility and AI Readiness distinguish Implemented, Manual and Not available.
-- Competitors are user-entered unless an external source is actually connected.
+- Competitors are user-entered unless an external source is actually connected and verified.
 - No private Google Business Profile data or exact AI-model output is claimed.
 - Frontend contains only public Supabase configuration; never a service-role key.
 
@@ -35,7 +35,7 @@ The current builder is an expandable section editor, not a drag-and-drop canvas.
 
 The existing Supabase project remains additive. Growth tables are `growth_websites`, `seo_audits`, `growth_clients`, `growth_reports`, and `competitors`, protected by tenant-scoped RLS. Legacy menu tables are preserved for history and are not part of the primary product navigation.
 
-See `docs/DATA.md` for the data contract and `docs/VERCEL.md` for deployment policy.
+See `docs/DATA.md`, `docs/AGENT_SYSTEM.md`, and the dated repository audit for the current operating contract.
 
 ## Local test
 
@@ -47,7 +47,7 @@ Open `http://localhost:4173/`. The app works in local mode when Supabase configu
 
 ## Development rules
 
-Work on `refactor/website-growth-platform`. PR #2 remains draft until reviewed. Do not rename the repository, merge to `main`, connect a different repository to Vercel, or delete legacy menu history.
+Work on a dedicated branch and open a PR against `main`. Do not merge to `main` without explicit approval. Do not rename the repository, connect a different repository to Vercel, or delete legacy menu history.
 
 ## Legacy isolation
 
