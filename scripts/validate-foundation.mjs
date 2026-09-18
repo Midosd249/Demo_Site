@@ -39,4 +39,4 @@ check('Healthy fixture has JSON-LD', /application\/ld\+json/i.test(healthy));
 check('Shell fixture contains required states', ['loading','empty','success','error','permission'].every(x => new RegExp(`class="[^"]*\\b${x}\\b`).test(shell)));
 
 if (failures.length) { console.error('\nFoundation validation failed:'); failures.forEach(x => console.error(x)); process.exit(1); }
-console.log(`\nFoundation validation passed: ${18} checks.`);
+console.log(`\nFoundation validation passed: ${21 - failures.length} checks.`);
