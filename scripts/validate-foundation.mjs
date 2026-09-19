@@ -27,7 +27,7 @@ check('Growth shell entrypoint', /src\/app\.js/.test(html));
 check('All primary routes declared', ['dashboard','websites','seo','local','ai','competitors','reports','clients','settings'].every(x => new RegExp(`\\b${x}\\b`).test(app)));
 check('SEO loading state', /جارٍ قراءة الصفحة/.test(seo));
 check('SEO blocked state', /النتيجة غير متاحة/.test(seo));
-check('Blocked path does not score', /status==='blocked'/.test(seo) && /return;/.test(seo));
+check('Blocked path does not score', /if\s*\(r\.status===['"]blocked['"]\)/.test(seo) && /if\s*\(r\.status===['"]blocked['"]\)[\s\S]*?return;/.test(seo));
 check('Network failure returns blocked', /catch\(error\).*status:'blocked'/s.test(audits));
 check('HTTP failure returns blocked', /if\(!response\.ok\).*status:'blocked'/s.test(audits));
 check('Score follows successful fetch', /const score=Math\.round/.test(audits));
