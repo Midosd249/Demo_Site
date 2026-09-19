@@ -1,37 +1,36 @@
 # QA_CHECKLIST
 
-## Browser
-- [ ] `index.html` loads with `lang="ar" dir="rtl"`.
-- [ ] Navigation works on desktop and phone widths.
-- [ ] All primary screens render loading, empty, success, error and permission-denied states.
-- [ ] Buttons and inputs are usable with touch.
+## PH-01 Foundation Hardening
 
-## Builder
-- [ ] Create a site without demo data.
-- [ ] Add hero/services/about/contact/map/testimonials/FAQ/CTA sections.
-- [ ] Edit section content.
-- [ ] Reorder sections.
-- [ ] Save, reload, and verify persisted payload.
-- [ ] Preview reflects saved section order/content.
+### Exact local commands
+From repository root:
 
-## SEO
-- [ ] HTTPS, title, meta description, H1, lang/dir, canonical, robots, viewport, image alts, internal links and JSON-LD are checked.
-- [ ] Successful fetch produces a real score from observed checks only.
-- [ ] CORS/network failure shows blocked/unavailable state and manual checklist; no score is invented.
-- [ ] Saved audit contains observed signals and issues only.
+    find src -type f -name '*.js' -print0 | xargs -0 -n1 node --check
+    node --check platform.js
+    node scripts/validate-foundation.mjs
 
-## Security/data
-- [ ] Frontend uses only anon/public Supabase configuration.
-- [ ] Tenant is resolved from authenticated membership.
-- [ ] RLS denies a user outside the tenant.
-- [ ] No service-role key or secret appears in source.
-- [ ] No legacy menu table is dropped.
+Expected validator result: Foundation validation passed: 21 checks.
 
-## CI
-- [ ] `node --check` passes for every frontend JS file.
-- [ ] Required files exist and are non-empty.
-- [ ] Secret-pattern check passes.
+### Deterministic fixtures
+- tests/fixtures/seo-healthy.html: readable successful SEO fixture with title, description, one H1, canonical, robots, viewport and JSON-LD.
+- tests/fixtures/seo-blocked.html: unavailable-condition fixture. Its missing fields are not treated as proof of a live network failure.
+- tests/fixtures/growth-shell-contract.html: vocabulary contract for loading, empty, success, error and permission states.
+Fixtures are test-only and must never become customer or production evidence.
 
-## Product honesty
-- [ ] No fake rankings, reviews, GBP actions, AI citations, competitor facts or analytics.
-- [ ] Unknown/unavailable values render as `—` or an explicit unavailable state.
+### CI contract
+CI runs JavaScript syntax, required-file checks, secret-pattern checks and the deterministic foundation validator. The foundation validator requires no external network.
+
+### Browser/device smoke still required
+Verify desktop and narrow mobile widths, RTL, navigation, loading/empty/error/permission states, SEO blocked path, builder create/edit/reorder/save/preview and absence of active-app console errors.
+
+### SEO honesty
+Successful fetch is required before a score exists. HTTP failure and CORS/network failure are blocked/unavailable. Missing fields are failed observed checks only after a successful page read. Fixtures never represent production evidence.
+
+### Release evidence
+Before any production claim record exact deployed SHA, Vercel READY state, verified deployment URL, browser smoke result, robots meta plus HTTP x-robots-tag result, and Supabase auth/RLS smoke result.
+
+### Existing baseline checks
+    find src -type f -name '*.js' -print0 | xargs -0 -n1 node --check
+    node --check platform.js
+
+Required files: index.html, README.md, AGENTS.md, styles/growth.css, growth_platform_migration.sql.

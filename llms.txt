@@ -3,10 +3,13 @@
 Website + Digital Growth Platform for Saudi/GCC SMBs.
 
 ## Product
-- [README](https://github.com/Midosd249/Demo_Site/blob/refactor/website-growth-platform/README.md): product scope, truth rules and local test.
-- [AGENTS.md](https://github.com/Midosd249/Demo_Site/blob/refactor/website-growth-platform/AGENTS.md): operating and safety rules for coding agents.
-- [Data model](https://github.com/Midosd249/Demo_Site/blob/refactor/website-growth-platform/docs/DATA.md): additive Supabase growth data contract.
-- [QA checklist](https://github.com/Midosd249/Demo_Site/blob/refactor/website-growth-platform/QA_CHECKLIST.md): validation requirements.
+- [README](https://github.com/Midosd249/Demo_Site/blob/main/README.md): product scope, truth rules and local test.
+- [AGENTS.md](https://github.com/Midosd249/Demo_Site/blob/main/AGENTS.md): operating and safety rules for coding agents.
+- [Agent operating system](https://github.com/Midosd249/Demo_Site/blob/main/docs/AGENT_SYSTEM.md): role boundaries and development workflow.
+- [Architecture audit](https://github.com/Midosd249/Demo_Site/blob/main/docs/REPOSITORY_AUDIT_2026-09-18.md): current repository findings and roadmap.
+- [Open-source research](https://github.com/Midosd249/Demo_Site/blob/main/docs/OPEN_SOURCE_RESEARCH_2026-09-18.md): sourced research and adoption boundaries.
+- [Data model](https://github.com/Midosd249/Demo_Site/blob/main/docs/DATA.md): additive Supabase growth data contract.
+- [QA checklist](https://github.com/Midosd249/Demo_Site/blob/main/QA_CHECKLIST.md): validation requirements.
 
 ## Important
-This repository is the application source, not a public production deployment. Do not infer a public URL, rankings, customer data, or AI-model results from repository contents.
+This repository is the application source. Do not infer a public production URL, rankings, customer data, traffic, or AI-model results from repository contents. Unknown or unavailable evidence must remain explicitly unknown/unavailable.
