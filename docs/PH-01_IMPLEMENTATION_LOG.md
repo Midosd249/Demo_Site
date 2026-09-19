@@ -29,5 +29,12 @@ Make foundation validation deterministic before major product features without a
 - Secret-pattern guard remains active.
 - Fixtures are test-only.
 
+## Verification update — 2026-09-19
+- GitHub Actions run `35307642182` executed syntax/core-file/secret checks successfully.
+- The deterministic validator initially failed its blocked-SEO contract assertion; the implementation was correct, but the assertion was too brittle.
+- Fixed the validator contract on `audit-foundation` in commit `b6fd7f1ef7e7c34928962cbae4ddacf4b5a80770`.
+- A new CI run for that commit is not yet reported by GitHub; this remains an open verification gate.
+- Vercel status for PR #3 is a deployment-resource failure (`api-deployments-free-per-day`), not functional QA evidence.
+
 ## Next verification
-Run syntax checks and node scripts/validate-foundation.mjs. Then inspect PR checks, verify the browser/device smoke path, and resolve issue #4 before any production indexing claim.
+Confirm the new CI run passes. Then perform browser/device smoke and resolve Issue #4's production `x-robots-tag: noindex` conflict before any production indexing claim.
