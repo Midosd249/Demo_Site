@@ -1,4 +1,4 @@
-# Demo Portfolio Design System
+# Website Portfolio Design System
 
 ## Product surface
 
@@ -8,13 +8,17 @@ Field-sales demo websites for Saudi/GCC SMBs.
 
 Persuade. The visitor should decide that the business deserves a stronger digital presence and understand the conversion path within seconds.
 
+## Product boundary
+
+This design system is for the **website layer**. It does not define digital-menu UI. Menu creation and QR-menu workflows belong to the separate menu repository.
+
 ## Shared principles
 
 1. Arabic-first and RTL by default.
 2. Mobile-first because the demo is primarily shown on a phone.
 3. One strong visual idea per sector.
 4. Large typography and deliberate negative space.
-5. Real conversion actions: menu, booking, WhatsApp, directions, call.
+5. Real conversion actions: booking, WhatsApp, call, directions, enquiry, quote.
 6. No fake social proof or invented performance metrics.
 7. Demo content is visibly marked DEMO.
 8. Each demo must be easy to reskin without changing the layout architecture.
@@ -33,34 +37,46 @@ Persuade. The visitor should decide that the business deserves a stronger digita
 - Radius: 18–28px
 - Content max width: 1180px
 - Body font: IBM Plex Sans Arabic
-- Display font: Cormorant Garamond / equivalent editorial serif
+- Display font: Cormorant Garamond / editorial serif
+- UI font: Manrope
 
 ## Component vocabulary
 
-- Announcement strip
-- Brand nav
+- Announcement / demo strip
+- Brand navigation
 - Editorial hero
-- Primary action
-- Secondary action
-- Category rail
-- Product/service cards
+- Primary conversion action
+- Service / package rows
 - Feature split
 - Gallery rail
-- Proof/benefit strip
-- Location/contact card
+- Proof / benefit strip
+- Booking / enquiry panel
+- Location / contact block
 - Sticky mobile action bar
-- Detail modal/sheet
+- Detail sheet for service selection
 - Footer
+
+## Conversion patterns
+
+Every sector should have one dominant action:
+
+- Grooming / beauty → booking or WhatsApp.
+- Clinic → appointment request.
+- Auto → quote request.
+- Fitness → trial / membership enquiry.
+- Home services → service request.
+- Local brand → visit / WhatsApp / product enquiry.
+- Event studio → consultation.
 
 ## Photography
 
-Photography should feel local, tactile, and premium. Avoid generic stock collages. Use a small number of strong images rather than many weak ones.
+Photography should feel local, tactile, and premium. Avoid generic stock collages. Use a small number of strong images rather than many weak ones. Demo imagery is replaceable and must be licensed or client-owned before production.
 
 ## Interaction
 
 - Hover/focus lift: 150–220ms.
 - Section reveal: 400–650ms.
-- Modal/sheet: 220–300ms.
+- Detail sheet: 220–300ms.
 - No continuous decorative animation.
 - prefers-reduced-motion must disable non-essential movement.
 
@@ -73,3 +89,4 @@ Photography should feel local, tactile, and premium. Avoid generic stock collage
 - aria-label on icon-only actions.
 - Dialogs/sheets close with Escape.
 - Images require meaningful alt text.
+- Directional language and layout must remain correct in RTL and LTR.
