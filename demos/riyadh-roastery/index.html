@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#17130f">
+<meta name="description" content="نموذج تجريبي لمقهى مختص في الرياض — تجربة ضيافة ومنيو رقمية مصممة للجوال.">
+<meta property="og:title" content="NŪR — Specialty Coffee / DEMO">
+<meta property="og:description" content="نموذج موقع ضيافة فاخر، عربي أولاً، ومهيأ للبيع الميداني.">
+<title>NŪR — نور | Specialty Coffee · DEMO</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div class="demo-bar"><span>DEMO / CONCEPT</span><span>نموذج عرض — يستبدل بالهوية والمحتوى الحقيقي عند التنفيذ</span></div>
+<header class="nav" id="top">
+<a class="brand" href="#top" aria-label="نور"><span class="brand-mark">ن</span><span><strong>NŪR</strong><small>COFFEE HOUSE</small></span></a>
+<nav class="nav-links" aria-label="التنقل"><a href="#menu" data-i18n="navMenu">المنيو</a><a href="#story" data-i18n="navStory">الحكاية</a><a href="#space" data-i18n="navSpace">المكان</a><a href="#visit" data-i18n="navVisit">زيارة</a></nav>
+<div class="nav-actions"><button class="lang" id="langToggle" type="button" aria-label="تغيير اللغة">EN</button><a class="nav-cta" href="#menu" data-i18n="openMenu">افتح المنيو</a></div>
+</header>
+<main>
+<section class="hero">
+<img class="hero-image" src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=2200&q=88" alt="قهوة مختصة في مساحة مقهى هادئة">
+<div class="hero-shade"></div>
+<div class="hero-content">
+<div class="hero-meta"><span>RIYADH / SAUDI ARABIA</span><span>DEMO 01</span></div>
+<p class="eyebrow" data-i18n="eyebrow">قهوة تُحضر بهدوء، وتُذكر طويلاً.</p>
+<h1 data-i18n="heroTitle">نور،<br><em>على مهل.</em></h1>
+<p class="hero-copy" data-i18n="heroCopy">مقهى مختص افتراضي صُمم ليُظهر كيف يمكن للموقع والمنيو الرقمي أن يصبحا امتدادًا حقيقيًا لتجربة المكان.</p>
+<div class="hero-actions"><a class="btn btn-light" href="#menu" data-i18n="openMenu">افتح المنيو</a><a class="btn btn-ghost" href="#visit" data-i18n="findUs">اكتشف المكان</a></div>
+</div><div class="hero-note"><span>SCROLL</span><span class="line"></span></div>
+</section>
+
+<section class="menu-section section" id="menu">
+<div class="section-head"><div><span class="eyebrow">THE MENU</span><h2 data-i18n="menuTitle">قائمة قصيرة. اختيارات محسوبة.</h2><p data-i18n="menuIntro">هذا الجزء هو نقطة البيع الأولى: منيو يمكن تصفحه بسرعة، فهمه على الجوال، وتحديثه بدون إعادة طباعة.</p></div><div class="menu-count"><strong>12</strong><span data-i18n="items">عنصر تجريبي</span></div></div>
+<div class="category-rail" role="tablist" aria-label="فئات المنيو">
+<button class="cat active" data-category="all" role="tab" aria-selected="true">الكل</button><button class="cat" data-category="coffee" role="tab" aria-selected="false">القهوة</button><button class="cat" data-category="cold" role="tab" aria-selected="false">البارد</button><button class="cat" data-category="bake" role="tab" aria-selected="false">المخبوزات</button>
+</div>
+<div class="featured">
+<article class="feature-card"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1100&q=85" alt="فنجان قهوة مختصة"><div><span>HOUSE SIGNATURE</span><h3>V60 إثيوبي</h3><p>زهري · حمضي · نهاية نظيفة</p><b>28 <small>ر.س</small></b></div></article>
+<article class="feature-card feature-dark"><div><span>THIS WEEK</span><h3>كولد برو</h3><p>استخلاص بارد طويل مع نوتات شوكولاتية.</p><b>24 <small>ر.س</small></b></div></article>
+</div>
+<div class="item-grid" id="menuGrid">
+<button class="item" data-category="coffee" data-name="إسبريسو" data-desc="شوت مزدوج بنكهة مركزة وتوازن واضح." data-price="16"><span class="item-icon">01</span><span class="item-copy"><strong>إسبريسو</strong><small>شوت مزدوج · 18g</small></span><b>16</b><span class="arrow">↗</span></button>
+<button class="item" data-category="coffee" data-name="كابتشينو" data-desc="إسبريسو مع حليب مبخر وقوام ناعم." data-price="20"><span class="item-icon">02</span><span class="item-copy"><strong>كابتشينو</strong><small>حليب مبخر · قوام ناعم</small></span><b>20</b><span class="arrow">↗</span></button>
+<button class="item" data-category="coffee" data-name="V60 إثيوبي" data-desc="زهري، حمضي، ونهاية نظيفة. مناسب لمن يفضل القهوة المقطرة." data-price="28"><span class="item-icon">03</span><span class="item-copy"><strong>V60 إثيوبي</strong><small>زهري · حمضي · نظيف</small></span><b>28</b><span class="arrow">↗</span></button>
+<button class="item" data-category="coffee" data-name="لاتيه نور" data-desc="حليب ناعم مع إسبريسو متوازن ولمسة فانيلا." data-price="22"><span class="item-icon">04</span><span class="item-copy"><strong>لاتيه نور</strong><small>إسبريسو · حليب · فانيلا</small></span><b>22</b><span class="arrow">↗</span></button>
+<button class="item" data-category="cold" data-name="كولد برو" data-desc="استخلاص بارد طويل، نكهة شوكولاتية وقوام ناعم." data-price="24"><span class="item-icon">05</span><span class="item-copy"><strong>كولد برو</strong><small>بارد · شوكولاتة · ناعم</small></span><b>24</b><span class="arrow">↗</span></button>
+<button class="item" data-category="cold" data-name="سبارك غريب فروت" data-desc="حمضيات منعشة مع لمسة غازية خفيفة." data-price="23"><span class="item-icon">06</span><span class="item-copy"><strong>سبارك غريب فروت</strong><small>حمضيات · غازي · منعش</small></span><b>23</b><span class="arrow">↗</span></button>
+<button class="item" data-category="bake" data-name="كرواسون زبدة" data-desc="طبقات هشة وزبدية، يفضل تناوله دافئًا." data-price="17"><span class="item-icon">07</span><span class="item-copy"><strong>كرواسون زبدة</strong><small>هش · زبدة · دافئ</small></span><b>17</b><span class="arrow">↗</span></button>
+<button class="item" data-category="bake" data-name="سينامون رول" data-desc="قرفة ناعمة مع تغطية خفيفة وحلاوة متوازنة." data-price="19"><span class="item-icon">08</span><span class="item-copy"><strong>سينامون رول</strong><small>قرفة · ناعم · متوازن</small></span><b>19</b><span class="arrow">↗</span></button>
+</div>
+</section>
+
+<section class="story section" id="story">
+<div class="story-copy"><span class="eyebrow">THE IDEA</span><h2 data-i18n="storyTitle">المنيو ليست صفحة. هي لحظة قرار.</h2><p data-i18n="storyCopy">التصميم هنا لا يدفن القائمة تحت عشرات الأقسام. العميل يصل إلى المنتج، يرى السعر والوصف، ثم يقرر أين يذهب بعد ذلك.</p><div class="mini-points"><div><strong>01</strong><span>اكتشاف سريع</span></div><div><strong>02</strong><span>تفاصيل واضحة</span></div><div><strong>03</strong><span>إجراء مباشر</span></div></div></div>
+<figure class="story-image"><img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1300&q=86" alt="داخل مقهى بإضاءة دافئة"><figcaption>مساحة مصممة لتُشاهد قبل أن تُزار.</figcaption></figure>
+</section>
+
+<section class="space section" id="space"><div class="space-top"><span class="eyebrow">THE SPACE</span><h2 data-i18n="spaceTitle">تفاصيل قليلة، حضور كبير.</h2></div>
+<div class="gallery"><img class="g-one" src="https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=1000&q=85" alt="مساحة جلوس في مقهى"><img class="g-two" src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=1200&q=85" alt="تحضير قهوة"><div class="quote"><span>“</span><p data-i18n="quote">الموقع الجيد لا ينافس المكان. يجعلك متحمسًا للوصول إليه.</p><small>NŪR / DEMO PRINCIPLE</small></div></div>
+</section>
+
+<section class="visit section" id="visit"><div class="visit-card"><div><span class="eyebrow">COME BY</span><h2 data-i18n="visitTitle">الخطوة التالية: زيارة المكان.</h2><p data-i18n="visitCopy">في النسخة الحقيقية تُربط هذه المنطقة بموقع الفرع، ساعات العمل، واتساب، الخرائط والحجز.</p></div><div class="visit-actions"><a class="btn btn-light" href="https://wa.me/?text=مرحباً، أرغب بالاستفسار عن NŪR" target="_blank" rel="noreferrer" data-i18n="whatsapp">واتساب</a><a class="btn btn-outline" href="https://maps.google.com/?q=Riyadh,Saudi+Arabia" target="_blank" rel="noreferrer" data-i18n="directions">الاتجاهات</a></div></div>
+<div class="trust-grid"><div><strong>RTL</strong><span>Arabic-first</span></div><div><strong>01</strong><span>Mobile-first demo</span></div><div><strong>∞</strong><span>Easy menu updates</span></div></div></section>
+</main>
+<div class="mobile-bar"><a href="#menu">المنيو</a><a href="#visit">زيارة</a><a href="https://wa.me/?text=مرحباً، أرغب بالاستفسار عن NŪR" target="_blank" rel="noreferrer">واتساب</a></div>
+<div class="sheet hidden" id="itemSheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle"><button class="sheet-backdrop" data-close aria-label="إغلاق"></button><div class="sheet-card"><button class="sheet-close" data-close aria-label="إغلاق">×</button><span class="eyebrow">MENU ITEM</span><h2 id="sheetTitle">العنصر</h2><p id="sheetDesc"></p><div class="sheet-bottom"><strong id="sheetPrice">0 ر.س</strong><a class="btn btn-dark" href="https://wa.me/?text=مرحباً، أريد الاستفسار عن هذا المنتج" target="_blank" rel="noreferrer">استفسر</a></div></div></div>
+<footer class="footer"><div><span>NŪR / DEMO</span><span>© FIELD SALES CONCEPT</span></div><a href="../">العودة إلى مجموعة النماذج</a></footer>
+<script src="./app.js"></script>
+</body></html>
