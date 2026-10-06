@@ -671,3 +671,25 @@ High-signal implementation references inspected included Start Bootstrap Agency 
 
 ### Current verification limitation
 The repository now has CI coverage for the new demo/test paths, but this session still requires the new Vercel deployment to complete and runtime fetch checks to be repeated against the latest commit. Interactive browser screenshot/interaction QA remains separate from HTTP/source verification.
+
+
+## 2026-10-06 — Visual red-team correction
+
+The submitted phone screenshot exposed a genuine quality failure in NOVA: the desktop composition survived into a narrow showcase viewport, creating a giant image followed by a compressed text column. The diagnosis is responsive composition, not copy.
+
+### Corrective work
+- Rebuilt NOVA around a cinematic full-bleed hero, oversized type, marquee, editorial chapters, service-stage composition, team overlay, journey track, appointment dock, reveal choreography, grain and cursor treatment.
+- Moved the completed-demo mobile/tablet breakpoint to 1100px across BRONZE, LUMÉRA and NOVA so the phone-first sales surface cannot receive the desktop grid too early.
+- Raised DESIGN.md quality rules: no text-first hero stacks, no generic equal-weight card walls, and every demo must contain at least one memorable visual/interaction device.
+- Removed the public portfolio placeholder email destination.
+- Extended demo regression tests for the premium visual system and mobile breakpoint.
+- Re-ran Exa/GitHub research against current motion-led, editorial, Saudi clinic, salon and detailing references.
+
+### Current verification
+- Latest Vercel deployment from the clinic redesign reached READY.
+- Public root and BRONZE/LUMÉRA/NOVA returned HTTP 200 after deployment.
+- GitHub source-level safety tests were extended but a hosted CI run is not currently exposed by the workflow-run connector.
+- Real browser screenshot/interaction QA remains the next verification layer because the available environment did not expose Chrome DevTools MCP.
+
+### Next execution
+Do not add another sector yet. Re-open BRONZE and LUMÉRA against the new visual bar, then apply the same red-team correction where their phone composition is still too template-like. After that, proceed to AUTO with the stronger visual system.
