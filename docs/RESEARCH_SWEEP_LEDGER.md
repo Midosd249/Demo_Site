@@ -189,3 +189,46 @@ For each meaningful Refero sweep, record:
 - direct reuse yes/no
 - license/copy concern
 - where the lesson was applied
+
+
+## Sweep — AUTO / VANTA / REFER0-LED BUILD — 2026-10-06
+
+### Refero references
+
+| Source | Type | Key lesson | Keep | Adapt | Reject | Reused directly? |
+|---|---|---|---|---|---|---|
+| Lamborghini.com via Refero Styles | Refero design system | Automotive theater, dark/light pacing, aggressive type, minimal chrome, one accent | image-led theater, hard geometry, restrained UI | Arabic RTL, quote-first conversion, lime accent | brand identity, yellow, copy, exact composition | No |
+| Tesla via Refero Styles | Refero design system | Full-bleed product imagery, minimal UI, focused CTA, compact spacing | image dominance, simple action hierarchy | service-story sections and quote builder | Tesla blue, vehicle-order model | No |
+| 099 SUPPLY via Refero Styles | Refero design system | Specimen metadata, hairlines, comparison slider | comparison and metadata discipline | before/after proof for detailing | mono-only system, catalog clone | No |
+
+### GitHub implementation references
+
+| Source | Type | License status | What was learned | Reused directly? |
+|---|---|---|---|---|
+| Esorensen-dev/auto-detailing-website | GitHub | Not established in inspected metadata | Service-business implementation candidate | No |
+| Arhat1111/Autodox-Car-Detailing-studio---website | GitHub | Not established | Automotive-specific implementation candidate | No |
+| asppats12/AutomotiveMasterpieces | GitHub | Not established | Automotive visual/structural reference | No |
+| rajyoggaware111-eng/The-Detailing-Studio- | GitHub | Not established | Detailing-specific structural candidate | No |
+| SabinaDam/Auto-detailing-Website | GitHub | Not established | Responsive detailing reference | No |
+| ahad98909/AutoShine-Detailing-Studio | GitHub | Not established | Detailing layout candidate | No |
+| EvanSawyer/car-detailing-website-template | GitHub | Not established | Lightweight template reference | No |
+| AbrRahman/prime-wash-frontend | GitHub | Not established | Wash/service flow reference | No |
+| martaqh/lp-automotive | GitHub | Not established | Automotive landing composition reference | No |
+| ByteSized-cmd/performance-car-landing | GitHub | Not established | Performance-car visual reference | No |
+
+### Exa / sector findings
+
+- Before/after proof should be a primary conversion mechanism for a visual detailing service.
+- Package hierarchy should distinguish service intent before price.
+- Mobile quote/booking should be short and contextual.
+- High-resolution photography must be treated as a performance constraint.
+- Real location, hours, service area, and booking destinations belong in the verified production handoff.
+- The VANTA demo uses only fictional content and a copy-ready request until a real channel is verified.
+
+### Decision
+
+**New capability:** VANTA establishes a reusable automotive transformation primitive: interactive before/after comparison + service package selector + contextual quote-message builder.
+
+**Applied:** `demos/riyadh-auto/`
+
+**Detailed direction:** `docs/AUTO_REFERO_DIRECTION.md`
