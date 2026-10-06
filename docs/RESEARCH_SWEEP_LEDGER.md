@@ -147,3 +147,45 @@ This was not a copywriting problem. It was a composition and responsive-system p
 - Vercel deployment dpl_7FNnFGwvmp8vY1mkCKfpSDoHrFvv reached READY for commit ac254f5458f1449f4fb1e618b787d0ce1860183e.
 - HTTP fetches returned 200 for the public root and all three demos after the clinic redesign.
 - Real interactive screenshot QA remains limited by the current tool environment; source and deployment verification are complete, but a Chrome DevTools visual pass is still a separate verification layer.
+
+
+## Sweep — REFERO STYLES / PERMANENT VISUAL REFERENCE — 2026-10-06
+
+**Primary source:** https://styles.refero.design/
+
+### What Refero adds to the research system
+
+Refero Styles provides a large library of AI-readable style references with inspectable color roles, typography, spacing, components, layout guidance, imagery rules and DESIGN.md/token exports. Its own guidance emphasizes that extracted style records are visual references rather than official brand guides.
+
+### High-signal observations
+
+| Source / style | Visual lesson | Decision |
+|---|---|---|
+| Refero Styles library | Research should begin from visual mechanisms, not only sector keywords | Make Refero a mandatory first visual sweep |
+| Apple (España) | Scale, whitespace, restrained accent, large visual surfaces and section rhythm can create premium perception without decoration | Adapt restraint and typographic generosity; never clone Apple |
+| Vercel | Technical/editorial hierarchy and disciplined contrast can feel premium without visual noise | Use as a benchmark for precision |
+| Linear | Dense information can remain premium when spacing, type and states are systematic | Use for information architecture, not visual copying |
+| ORYZO AI | Atmospheric editorial presentation can make a product page feel like a visual story | Use for cinematic/art-direction research |
+| Teenage Engineering | Strong personality can come from composition and product presentation rather than decoration | Use as a reminder to make sector identity distinctive |
+
+### Operating decision
+
+**Keep:** Refero as the permanent visual research library.
+
+**Adapt:** Extract roles, composition rules, type hierarchy, spacing rhythm, image treatment and interaction patterns into original Saudi/RTL/mobile-first designs.
+
+**Reject:** Copying brand layouts, proprietary imagery, copy, logos, distinctive compositions or assuming an extracted style is a license.
+
+**New capability:** `docs/REFERO_STYLES_REFERENCE.md` is now the repository's permanent Refero operating manual. `RESEARCH_SWEEP.md` requires a live Refero review for every new sector, major visual redesign, shared visual primitive, or portfolio quality pass.
+
+### Required evidence
+
+For each meaningful Refero sweep, record:
+- style/source URL
+- date
+- visual role
+- key lesson
+- Keep / Adapt / Reject
+- direct reuse yes/no
+- license/copy concern
+- where the lesson was applied
