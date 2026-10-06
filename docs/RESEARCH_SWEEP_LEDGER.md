@@ -89,3 +89,61 @@ Search results are discovery signals, not automatic authorization or proof of qu
 **Reject:** fake credentials, fake patient reviews, invented treatment outcomes, unverified phone numbers, diagnosis claims, and menu/QR workflows.
 
 **New capability:** public portfolio entry point at / is now separate from the authenticated Growth Studio workspace at /studio.html; completed demos remain public and noindex.
+
+
+## Sweep — VISUAL QUALITY RED TEAM — 2026-10-06
+
+### Exa references that changed the bar
+
+| Source | Type | Signal | Applied |
+|---|---|---|---|
+| Noir Studio / PrimoDevStudio | Motion case study | Full-screen loader, split typography, pinned horizontal gallery, magnetic CTA, custom cursor, ScrollTrigger choreography | Adapted as a restrained interaction vocabulary; no code copied |
+| fromanother / Hon Tran case study | Award-winning agency case study | The site itself is the pitch; cinematic media, editorial pacing, shared motion language, GPU-safe transform/opacity animation | Applied to clinic hero/reveal rhythm |
+| The Atelier / Apala Gonzalez | Cinematic barber case study | Grain/vignette, section counters, scroll-driven narrative, gallery/lightbox, persistent mobile action | Used as a direction reference for portfolio-level craft |
+| Lumina Dental Studio | Dental design case study | Warm medical art direction, service-by-benefit structure, humanized clinician presentation, low-friction booking | Adapted into NOVA's calmer medical world |
+| NOVA Clinics Saudi | Riyadh clinic | Local clinic expectations: clear services, comfort, location and appointment information | Used for sector truth/structure, not visual copying |
+| Smile Design Riyadh | Riyadh clinic | Explicit service, contact and location information | Used as content-model reference only |
+| Smile World Riyadh | Riyadh clinic | Calm experience language, specialists, technology, location and appointment flow | Used as conversion/content reference |
+
+### GitHub references inspected in this red-team pass
+
+- dj2313/salon-website — premium salon reference with motion, theme depth and responsive component structure.
+- zidvsd/lumina-dental — dental-specific frontend reference.
+- eternalstoneinside/noir-detailing-studio — automotive/detailing reference candidate.
+- Isradev96/barbershop-website — barber reference candidate.
+- Mian-0/Landing-page-for-an-agency — high-polish motion reference; not a code donor because license is not permissive.
+- StartBootstrap/startbootstrap-agency — MIT architecture reference; used for structural ideas only.
+
+### Red-team finding
+
+The mobile screenshot exposed a real quality failure: the clinic demo was receiving a desktop composition at a phone-sized physical viewport, producing a giant image followed by a compressed text column. The underlying issue was a breakpoint that activated too late for the actual showcase environment.
+
+This was not a copywriting problem. It was a composition and responsive-system problem.
+
+### Corrective decisions
+
+**Keep**
+- Full-bleed hero imagery.
+- Oversized display typography.
+- Editorial chaptering.
+- Purposeful motion.
+- Service storytelling instead of dense lists.
+- Persistent conversion action.
+
+**Change**
+- Mobile/tablet breakpoint moved to 1100px across all three completed demos.
+- NOVA rebuilt around a cinematic hero, marquee, chapter system, service-stage composition, team overlay, journey track, appointment dock, reveal choreography and reduced-motion fallback.
+- Portfolio design system now explicitly bans text-first stacks and requires a memorable visual device per demo.
+
+**Reject**
+- Giant image + narrow text column as the primary hero.
+- Equal-weight generic card grids.
+- Paragraph-heavy sections presented as the main visual content.
+- Desktop-first layouts that merely shrink on phones.
+
+### Verification status
+
+- Source-level regression tests were extended for the premium visual system and 1100px mobile-first breakpoint.
+- Vercel deployment dpl_7FNnFGwvmp8vY1mkCKfpSDoHrFvv reached READY for commit ac254f5458f1449f4fb1e618b787d0ce1860183e.
+- HTTP fetches returned 200 for the public root and all three demos after the clinic redesign.
+- Real interactive screenshot QA remains limited by the current tool environment; source and deployment verification are complete, but a Chrome DevTools visual pass is still a separate verification layer.
