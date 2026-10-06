@@ -232,3 +232,41 @@ For each meaningful Refero sweep, record:
 **Applied:** `demos/riyadh-auto/`
 
 **Detailed direction:** `docs/AUTO_REFERO_DIRECTION.md`
+
+## Sweep — MATLA / COFFEE ROASTERY / REFER0-LED BUILD — 2026-10-06
+
+### Live visual reference
+
+**Primary source:** https://styles.refero.design/
+
+| Reference | Keep | Adapt | Reject |
+|---|---|---|---|
+| Forner — supplied Style Reference | warm bone/roast palette, flat paper surfaces, hairlines, sharp geometry, editorial whitespace, sparse serif annotation | Arabic-first typography, roast/product metadata, physical packaging composition, coffee-specific narrative | exact layout, copy, images, proprietary identity |
+| Lamborghini / Tesla / 099 SUPPLY via Refero Styles | product-as-artifact thinking, hard geometry, metadata discipline, focused visual hierarchy | roast log + origin selector + brew notes | brand-specific identity, exact composition, proprietary assets |
+
+### Exa / Saudi coffee signals
+
+| Source | Signal | Applied |
+|---|---|---|
+| Qavashop / Saudi coffee marketplace | Saudi specialty coffee shoppers compare origin, roast, tasting notes, brewing fit and freshness | MATLA exposes origin, process, roast, tasting notes and suggested preparation instead of generic product claims |
+| محمصة الرياض / current product references | Product presentation benefits from clear origin and preparation context | Applied as content-model inspiration only; no copy/assets reused |
+| أوان / Riyadh roastery | Small-batch, roast timing and product metadata can become part of the brand story | Adapted into the roast-log narrative; no identity reused |
+| محمصة بيكا | Taste-led discovery is stronger than a long undifferentiated catalog | Adapted into three origin choices with distinct sensory directions |
+
+### Asset / licensing decision
+
+The supplied Forner reference is treated as a design reference, not a source of assets. MATLA uses locally stored SVG artwork created for this fictional demo rather than random remote stock photography. No real brand logo, review, branch, phone number, award, or proprietary photography is represented.
+
+### Decision
+
+**Keep:** Forner's discipline of warmth, space, flat surfaces and restrained type.
+
+**Adapt:** turn the reference into a roastery-specific narrative where the product bag, roast sheet and brew method form one system.
+
+**Reject:** generic coffee-shop templates, giant image-plus-text stacks, repeated three-card grids, fake commerce and literal reference copying.
+
+**New capability:** MATLA establishes a reusable roast-log narrative primitive: product artifact + selectable origin record + contextual preparation notes + copy-ready enquiry, while remaining commerce-free until a verified ordering destination exists.
+
+**Applied:** demos/riyadh-roastery/
+
+**Detailed direction:** docs/ROASTERY_REFERO_DIRECTION.md
