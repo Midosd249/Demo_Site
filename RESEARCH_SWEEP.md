@@ -11,8 +11,9 @@ Read, in this order:
 2. `FIELD_SALES_MISSION.md`
 3. `PORTFOLIO_STRATEGY.md`
 4. `DESIGN.md`
-5. this file
-6. the target demo and its recent commits
+5. `docs/REFERO_STYLES_REFERENCE.md`
+6. this file
+7. the target demo and its recent commits
 
 Never rely on conversation history alone.
 
@@ -51,7 +52,15 @@ For each candidate inspect:
 - tests/CI when present
 - obvious security/dependency risks
 
-### Pass B — Exa web + visual sweep
+### Pass B — Refero Styles + Exa web + visual sweep
+
+**Refero Styles is mandatory for visual research.**
+
+Before implementing a meaningful visual change, open the live Refero Styles source and inspect the relevant style pages. Use it to study composition, typography, spacing, surfaces, imagery, components, and interaction language. Extract lessons; do not copy brands or proprietary designs.
+
+Record high-signal Refero findings in `docs/RESEARCH_SWEEP_LEDGER.md` and follow the permanent operating rules in `docs/REFERO_STYLES_REFERENCE.md`.
+
+Then use Exa to research:
 
 Use Exa to research:
 
@@ -218,7 +227,7 @@ Similarity to a reference is a warning sign. A stronger result should be recogni
 
 For a new sector, execute:
 
-**Context → GitHub sweep → Exa sector research → visual scan → asset/license check → synthesis → TDD → build → browser QA → completed-site regression review → ledger update → continuity update → deploy verification.**
+**Context → Refero Styles review → GitHub sweep → Exa sector research → visual scan → asset/license check → synthesis → TDD → build → browser QA → completed-site regression review → ledger update → continuity update → deploy verification.**
 
 If a source cannot be validated, downgrade it to inspiration only.
 
