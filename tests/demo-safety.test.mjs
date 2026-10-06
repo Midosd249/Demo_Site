@@ -66,3 +66,14 @@ test("public portfolio has no fake contact destination", () => {
   const index = read("index.html");
   assert.doesNotMatch(index, /hello@example\.com/);
 });
+
+
+test("all sales demos prioritize phone composition before tablet widths", () => {
+  for (const file of [
+    "demos/riyadh-barber/styles.css",
+    "demos/riyadh-salon/styles.css",
+    "demos/riyadh-clinic/styles.css"
+  ]) {
+    assert.match(read(file), /@media\s*\(max-width:1100px\)/);
+  }
+});
