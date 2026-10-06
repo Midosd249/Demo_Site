@@ -24,6 +24,10 @@ This design system is for the **website layer**. It does not define digital-menu
 8. Each demo must be easy to reskin without changing the layout architecture.
 9. Motion is short, purposeful, and disabled for reduced-motion users.
 10. The first viewport must look finished before any interaction.
+11. Never let a commercial demo collapse into a text column under a large image. The page must use composition, scale, image treatment, contrast, and interaction as part of the sales argument.
+12. Mobile is the primary showcase surface. Treat widths up to 1100px as phone/tablet-first composition so a narrow browser never receives a shrunken desktop layout.
+13. Every demo needs at least one memorable interaction or visual device: cinematic hero, pinned/sticky narrative, reveal choreography, horizontal/stacked gallery, before/after, magnetic or contextual CTA, or a similarly purposeful mechanism.
+14. Equal-weight cards, endless paragraphs, and generic centered landing-page stacks are anti-patterns unless the sector explicitly needs them.
 
 ## Shared tokens
 
