@@ -39,7 +39,7 @@ The current builder is an expandable section editor, not a drag-and-drop canvas.
 
 The existing Supabase project remains additive. Growth tables are `growth_websites`, `seo_audits`, `growth_clients`, `growth_reports`, and `competitors`, protected by tenant-scoped RLS. Legacy menu tables are preserved for history and are not part of the primary product navigation.
 
-See `docs/DATA.md` for the data contract, `docs/VERCEL.md` for deployment policy, and `KAKU_CONTEXT.md` for the full roadmap and session handoff.
+See `docs/DATA.md` for the data contract, `docs/VERCEL.md` for deployment policy, `KAKU_CONTEXT.md` for the full roadmap and session handoff, and `docs/REFERO_STYLES_REFERENCE.md` for the permanent visual research protocol.
 
 ## Local test
 
