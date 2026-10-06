@@ -1,0 +1,44 @@
+/* KAKU WEBSITE QUALITY LAYER
+   Shared baseline for portfolio demos.
+   Sector-specific CSS remains responsible for visual identity and layout.
+*/
+.quality-reference{
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+}
+.quality-reference :where(a,button,input,select,textarea){-webkit-tap-highlight-color:transparent}
+.quality-reference :where(a,button):focus-visible{
+  outline:2px solid currentColor;
+  outline-offset:4px;
+}
+.quality-reference :where(.primary,.secondary,.nav-book,.nav-cta,.book,.action,.button,.mobile-bar a){
+  min-height:44px;
+}
+.quality-reference :where(img){
+  max-width:100%;
+}
+.quality-reference :where(section[id],main[id]){
+  scroll-margin-top:96px;
+}
+.quality-reference ::selection{
+  background:currentColor;
+  color:#fff;
+}
+.quality-reference :where(a,button){
+  touch-action:manipulation;
+}
+.quality-reference :where(input,select,textarea){
+  font-size:16px;
+}
+.quality-reference :where(.mobile-bar){
+  padding-bottom:max(5px,env(safe-area-inset-bottom));
+}
+@media (prefers-reduced-motion:reduce){
+  .quality-reference,
+  .quality-reference *{
+    scroll-behavior:auto!important;
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+  }
+}
