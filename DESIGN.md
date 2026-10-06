@@ -94,3 +94,25 @@ Photography should feel local, tactile, and premium. Avoid generic stock collage
 - Dialogs/sheets close with Escape.
 - Images require meaningful alt text.
 - Directional language and layout must remain correct in RTL and LTR.
+
+
+## Reference implementation: Riyadh Clinic
+
+The repository's Riyadh Clinic static site is the canonical implementation reference for future website work. It demonstrates the expected baseline for:
+- first-viewport composition
+- Arabic RTL structure
+- restrained tokenized CSS
+- direct conversion paths
+- responsive mobile behavior
+- accessible controls and focus states
+- purposeful motion with reduced-motion support
+- simple vanilla JavaScript
+- explicit demo/data boundaries
+
+The reference is a quality standard, not a visual template. Sector demos should preserve the engineering discipline while developing a distinct visual language.
+
+Detailed coding rules, performance guidance, accessibility rules, content-integrity rules, and the completion checklist live in docs/WEBSITE_QUALITY_REFERENCE.md.
+
+### Reference rule
+
+Before creating or materially redesigning a website, compare the implementation against the reference site and the quality checklist. A new site should meet or exceed the reference in hierarchy, responsiveness, accessibility, performance, and conversion clarity.
