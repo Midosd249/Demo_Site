@@ -6,7 +6,7 @@
 
 ## 1. Mission
 
-Transform `Midosd249/Demo_Site` from the legacy digital-menu-oriented codebase into a **website + digital growth platform** for Saudi/GCC SMBs, optimized for field sales in Riyadh.
+Transform `Midosd249/Demo_Site` into a **sales-grade website portfolio + digital growth platform** for Saudi/GCC SMBs, optimized for phone-based field sales in Riyadh. The immediate commercial purpose is to create convincing real-business website demos that can be shown during prospect visits and sold as a separate website service or add-on. The digital-menu product is explicitly out of scope here and lives in a separate repository.
 
 The website layer owns:
 
@@ -26,9 +26,15 @@ The separate digital-menu repository owns:
 - QR/menu-specific workflows
 - Menu operations
 
-The products may be sold together, but their core jobs must remain separate.
+The products may be sold together, but their core jobs must remain separate. **Do not implement, recreate, migrate, or optimize the digital-menu workflow in this repository.**
 
-## 2. Current verified state
+## 2. User intent — canonical commercial brief
+
+The user wants a deep-researched, continuously improving portfolio of genuinely usable business websites that can be demonstrated live on a phone during Riyadh field-sales rounds; look production-grade rather than generic; vary strongly across sectors; demonstrate clear conversion mechanics; make a prospect imagine their own business inside the site; create a path from demo to paid website to ongoing growth work; reuse architecture without making every demo look identical; and use deep research for sector selection, buyer behavior, UX, visual direction, SEO, local search, accessibility, compliance, and recurring service opportunities.
+
+The portfolio is complementary to the separate digital-menu offer. This repository must never drift back into being a menu repository.
+
+## 3. Current verified state
 
 **Repository:** `Midosd249/Demo_Site`
 
@@ -123,7 +129,7 @@ Verified direction from the prior build:
 
 BRONZE is the reference implementation for conversion mechanics, not a visual template that every future sector should copy.
 
-## 3. Non-negotiable product rules
+## 4. Non-negotiable product rules
 
 ### Product boundary
 
@@ -177,7 +183,7 @@ Default to:
 
 English is a secondary mode, not the design default.
 
-## 4. Strategic diagnosis
+## 5. Strategic diagnosis
 
 The repository has already crossed the most important strategic boundary: it is no longer a collection of pretty demos; it is being shaped into a **repeatable sales and growth system**.
 
@@ -192,7 +198,7 @@ Therefore the next phase has four priorities:
 
 The portfolio should be treated as a set of sector-specific sales weapons built on one reliable platform foundation.
 
-## 5. Master roadmap
+## 6. Master roadmap
 
 ### Phase 0 — Continuity and foundation
 **Status: In progress / partially complete**
@@ -372,7 +378,7 @@ Each demo needs a 60–120 second sales choreography.
 
 The owner should understand the value before hearing technical vocabulary.
 
-## 6. Design doctrine
+## 7. Design doctrine
 
 Shared system:
 
@@ -393,7 +399,7 @@ Shared tokens currently documented in `DESIGN.md`.
 
 Do not force every sector into the same palette, typography, imagery, or component composition. Reuse **interaction primitives and architecture**, not the visual identity.
 
-## 7. Conversion doctrine
+## 8. Conversion doctrine
 
 Every sector has one dominant CTA.
 
@@ -416,7 +422,7 @@ The first viewport should establish:
 
 Avoid CTA multiplication. Secondary actions can exist, but one action must clearly win.
 
-## 8. Content and asset rules
+## 9. Content and asset rules
 
 For demos:
 
@@ -438,7 +444,7 @@ For client production:
 - Verify image licenses/ownership.
 - Verify structured data against visible facts.
 
-## 9. Engineering rules
+## 10. Engineering rules
 
 - Work on `refactor/website-growth-platform` unless the repository state explicitly changes.
 - Do not merge to `main` without explicit approval.
@@ -453,7 +459,7 @@ For client production:
 - Before changing behavior, add or update regression coverage when the repository's testing setup supports it.
 - Verify build/runtime behavior before declaring a feature complete.
 
-## 10. Verification checklist
+## 11. Verification checklist
 
 Before calling a demo complete:
 
@@ -497,7 +503,7 @@ Before calling a demo complete:
 - [ ] External integration failures degrade honestly.
 - [ ] Legacy menu data remains intact.
 
-## 11. Current research signals
+## 12. Current research signals
 
 A current Exa research pass was used to sanity-check the roadmap. The strongest recurring signal is that local growth is not one feature: it is the combination of accurate business facts, mobile usability, service-specific information, local context, structured data, reviews/proof, clear conversion paths, and ongoing measurement.
 
@@ -513,7 +519,7 @@ Useful implementation principles:
 
 These are strategy inputs, not promises of ranking or AI recommendation.
 
-## 12. Decision log
+## 13. Decision log
 
 ### D-001 — Website-only repository boundary
 **Decision:** Demo_Site is the website/growth layer, not the digital-menu product.
@@ -550,7 +556,7 @@ These are strategy inputs, not promises of ranking or AI recommendation.
 
 **Status:** Locked.
 
-## 13. Next execution queue
+## 14. Next execution queue
 
 When resuming, execute in this order unless new repository evidence changes the priority:
 
@@ -565,7 +571,7 @@ When resuming, execute in this order unless new repository evidence changes the 
 
 Do not spend the next cycle polishing BRONZE endlessly. BRONZE has already proven the concept. The next value is proving repeatability and differentiation.
 
-## 14. Session handoff template
+## 15. Session handoff template
 
 At the end of every meaningful session, update:
 
