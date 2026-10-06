@@ -65,3 +65,27 @@
 ## Note
 
 Search results are discovery signals, not automatic authorization or proof of quality. Any future reuse must independently verify the source's current license and asset terms.
+
+
+## Sweep — CLINIC / public-access pass — 2026-10-06
+
+### Exa / current sector references
+
+| Source | Type | What was learned | Reused directly? |
+|---|---|---|---|
+| Smile Clinic Saudi | Saudi clinic | Trust is built through service clarity, team expertise, safety/process information, educational content, and explicit appointment flow | No |
+| Smile World Riyadh | Saudi clinic | Clinic positioning benefits from calm experience language, specialist profiles, technology, safety, and a clear treatment journey | No |
+| Prolines Saudi dental guidance | Saudi practitioner | Mobile-first, bilingual RTL, dentist credentials, local SEO, appointment/WhatsApp pathways and accurate clinic facts are recurring requirements | No |
+| SmileBright case study | Design case study | Calm visual tone, readable service architecture, doctor profiles, mobile-first CTA hierarchy and local search structure reduce anxiety | No |
+| Lumina Dental Studio case study | Design case study | Boutique medical design can combine warmth with clinical credibility; service benefits, genuine doctor information and low-friction booking are strong patterns | No |
+| Dentinostic healthcare case study | Product case study | Healthcare UX should reduce anxiety through clear steps, visible licensed professionals and simple progress-oriented journeys | No |
+
+### Clinic decisions
+
+**Keep:** calm editorial medical direction, strong photography, service-by-intent grouping, doctor credibility layer, three-step care journey, appointment request as the dominant CTA, reduced motion, factual demo labeling.
+
+**Adapt:** warm wellness aesthetics into a Riyadh dental/aesthetics context, Arabic-first RTL, Saudi appointment handoff, service detail sheet, copy-ready appointment request until a real channel is verified.
+
+**Reject:** fake credentials, fake patient reviews, invented treatment outcomes, unverified phone numbers, diagnosis claims, and menu/QR workflows.
+
+**New capability:** public portfolio entry point at / is now separate from the authenticated Growth Studio workspace at /studio.html; completed demos remain public and noindex.
