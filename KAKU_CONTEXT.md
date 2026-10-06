@@ -621,3 +621,30 @@ Record the latest relevant SHA.
 ---
 
 **Canonical rule for future sessions:** If the conversation history is missing, this file is the source of continuity. Reconstruct from the repository, not from memory. Update this file before ending a major work session.
+
+
+## 16. Research sweep operating rule — locked
+
+`RESEARCH_SWEEP.md` is now the canonical instruction for continuous external research and visual benchmarking.
+
+Every major design/build pass must sweep GitHub repositories and Exa sources before implementation, inspect licenses and live previews where available, extract patterns rather than clone work, and record meaningful decisions. Completed demos must be re-reviewed whenever later research exposes a stronger quality pattern.
+
+### Quality pass completed 2026-10-06
+
+A cross-category GitHub + Exa sweep was performed across open-source website templates, agency systems, modern marketing builds, design systems, Saudi salon/clinic patterns, and current visual inspiration.
+
+High-signal implementation references inspected included Start Bootstrap Agency (MIT), Directus AgencyOS (MIT), NOVA Agency (all rights reserved — reference only), and Creative Agency. Additional candidates were discovered for future targeted inspection. Exa also surfaced current Saudi beauty/booking patterns and visual galleries emphasizing stronger art direction, mobile behavior, bilingual/RTL quality, and explicit conversion paths.
+
+### Applied improvements
+
+- BRONZE received a visual quality pass: sticky glass navigation, restrained grain/depth treatment, stronger hover hierarchy, image treatment, elevated conversion controls, and removal of the unverified placeholder phone action.
+- LUMÉRA received a visual quality pass: editorial depth, sticky navigation, stronger image transitions, button hierarchy, service-card depth, and more deliberate section framing.
+- Added regression tests for completed-demo safety rules.
+- Added the mandatory research protocol so future sessions continuously revisit relevant GitHub repositories, visual references, assets, and current sources.
+
+### Verification state
+
+- GitHub source updates are committed on `refactor/website-growth-platform`.
+- Vercel remains linked to `Midosd249/Demo_Site`.
+- Source-level safety checks are represented in `tests/demo-safety.test.mjs`.
+- Runtime/browser verification of the newly committed visual pass must be completed against the new deployment before calling the quality pass fully verified.
