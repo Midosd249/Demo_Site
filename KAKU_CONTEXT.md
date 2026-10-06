@@ -40,7 +40,7 @@ The portfolio is complementary to the separate digital-menu offer. This reposito
 
 **Working branch:** `refactor/website-growth-platform`
 
-**Latest verified continuity commit:** `75315b97be3ee2da84cff4e5130887aadb1ac6e4`
+**Latest verified continuity commit:** `002cc6ce31eeb22d58487ac441e9a080df4baeed`
 
 **Latest broader platform commit observed:** `c84f7a87eae32df109d48a504deae38f0439ef7f`
 
@@ -100,6 +100,28 @@ Sector sequence:
 | 08 | Florist / gift studio | Occasions + catalog presentation | WhatsApp order |
 | 09 | Event / wedding studio | Portfolio + package discovery | Consultation |
 | 10 | Local professional services | Expertise + proof + enquiry | Lead request |
+
+### SALON / LUMÉRA Beauty Atelier
+
+Second field-sales demo. The existing salon build was materially elevated after review into a distinct editorial beauty world rather than a Barber clone.
+
+Verified direction:
+
+- Asymmetric photography-led hero
+- Warm ivory / espresso / muted rose / olive palette
+- Editorial serif typography
+- Visual service grid rather than a generic card catalogue
+- Contextual service detail sheet
+- Booking message generator with copy-to-clipboard
+- No fake phone number or fake booking destination
+- Occasion / bridal package story
+- Location preview with explicit handoff for real client data
+- Sticky mobile navigation
+- Responsive desktop/tablet/mobile layouts
+- Reduced-motion support
+- DEMO-safe fictional content
+
+The booking interaction deliberately stops at a truthful, copy-ready WhatsApp message until a real client number/provider is verified.
 
 ### BRONZE / Riyadh Barber
 
@@ -564,8 +586,8 @@ When resuming, execute in this order unless new repository evidence changes the 
 2. Read this file plus `PORTFOLIO_STRATEGY.md`, `DESIGN.md`, `docs/DATA.md`, and `docs/VERCEL.md`.
 3. Verify BRONZE still satisfies the conversion/accessibility/truth rules.
 4. Identify reusable primitives that should be extracted before the next demo.
-5. Build **SALON / SPA** as a genuinely different visual world.
-6. Verify mobile/RTL/CTA/reduced-motion behavior.
+5. Build **SALON / SPA** as a genuinely different visual world. (Completed as LUMÉRA; continue only for refinements discovered by verification.)
+6. Verify mobile/RTL/CTA/reduced-motion behavior. (Desktop/mobile deployment smoke check completed at HTTP level; interactive browser behavior still requires visual browser QA.)
 7. Record the milestone here.
 8. Continue to CLINIC only after SALON has passed verification.
 
