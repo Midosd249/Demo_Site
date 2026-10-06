@@ -10,8 +10,8 @@ This demo sells the **website layer**:
 - Service discovery with category filtering
 - Starting prices and estimated durations
 - Occasion / bridal package positioning
-- WhatsApp booking with contextual service details
-- Phone and map conversion paths
+- WhatsApp-ready booking message with contextual service details
+- Map preview and verified-data handoff (no fake phone action)
 - Mobile sticky booking navigation
 - Arabic-first RTL with an English direction toggle
 - Responsive desktop/tablet/mobile layouts
@@ -56,4 +56,4 @@ Unsplash imagery is used as replaceable demo imagery only. Verify licensing and 
 3. Tap a service and demonstrate contextual booking.
 4. Jump to the occasion section.
 5. Finish on the booking panel.
-6. Position the site as the layer around the client's existing operational tools, not as a replacement for the separate menu product.
+6. Copy the generated booking message and show how it becomes a real WhatsApp flow after the client's verified number is connected.\n7. Position the site as the layer around the client's existing operational tools, not as a replacement for the separate menu product.
