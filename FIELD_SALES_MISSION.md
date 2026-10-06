@@ -230,3 +230,24 @@ Never rely on conversation history alone.
 ## 14. Definition of done
 
 The portfolio is working when a prospect can understand each demo within seconds; every sector has a distinct visual identity; every demo has a clear conversion path; the sites are credible on a phone; the websites are easy to reskin; the codebase remains maintainable; SEO foundations are present; facts are truthful; assets are replaceable; the menu product remains completely separate; the demos collectively support a real Riyadh field-sales route; and the next demo can be built faster without looking like a copy of the previous one.
+
+## 15. Mandatory research sweep protocol
+
+All future design/build sessions must follow `RESEARCH_SWEEP.md`.
+
+The sweep is now an explicit operating requirement, not optional inspiration gathering:
+
+1. Read the continuity/design files.
+2. Sweep GitHub across multiple repository categories and inspect high-signal candidates.
+3. Check README, license, architecture, responsive behavior, interactions, accessibility, assets, and live preview where available.
+4. Run a separate Exa web/visual sweep covering real category leaders, Saudi/GCC examples, current design patterns, technical guidance, and legitimate asset sources.
+5. Separate **Keep / Adapt / Reject / New capability** decisions.
+6. Apply the resulting improvements to the current target demo.
+7. Re-review completed demos when a later sweep reveals a materially better pattern.
+8. Record meaningful sources and decisions in the research ledger.
+
+The objective is continuous quality improvement without cloning external work.
+
+**A completed demo is never exempt from a later quality pass.**
+
+See: `RESEARCH_SWEEP.md`.
