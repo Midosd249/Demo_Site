@@ -737,6 +737,7 @@ The project design system and Saudi/RTL truth constraints remain authoritative w
 
 - New AUTO files are committed on `refactor/website-growth-platform`.
 - Final pre-deploy branch head for this milestone: `22ede1e4a509f9203b8010cecf27656757d99933`.
+- Vercel deployment `dpl_BZP5QgABRyZbZzU2FryMG9vVXTnC` reached READY for commit `c54fd12dbc4f8740074a756d9e1c736e0e99fa92`; preview URL: `https://demo-site-ba3gvxsmw-midosd2s-projects.vercel.app/`.
 - New JavaScript syntax was checked locally with `node --check`.
 - Source-level demo safety coverage was extended.
 - Public portfolio count/grid was updated to four selected demos.
