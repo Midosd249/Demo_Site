@@ -736,8 +736,10 @@ The project design system and Saudi/RTL truth constraints remain authoritative w
 ### Current verification
 
 - New AUTO files are committed on `refactor/website-growth-platform`.
+- Final pre-deploy branch head for this milestone: `22ede1e4a509f9203b8010cecf27656757d99933`.
 - New JavaScript syntax was checked locally with `node --check`.
 - Source-level demo safety coverage was extended.
+- Public portfolio count/grid was updated to four selected demos.
 - GitHub workflow-run connector currently exposes no workflow runs for the branch head, so hosted CI is **not verified** for this milestone.
 - Real browser screenshot/interaction QA remains unverified in the current environment.
 
