@@ -3,6 +3,8 @@
 > Canonical continuity document for future ChatGPT/Kaku sessions.
 >
 > **Rule:** Read this file before making product, design, architecture, repository, deployment, or portfolio decisions. Update it whenever a meaningful decision, milestone, blocker, or verified state changes.
+>
+> **Permanent visual reference:** `docs/REFERO_STYLES_REFERENCE.md` + https://styles.refero.design/. Every new design/build session must read the repository reference, and every meaningful visual change must revisit the live Refero source before implementation.
 
 ## 1. Mission
 
