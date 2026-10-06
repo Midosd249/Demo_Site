@@ -648,3 +648,11 @@ High-signal implementation references inspected included Start Bootstrap Agency 
 - Vercel remains linked to `Midosd249/Demo_Site`.
 - Source-level safety checks are represented in `tests/demo-safety.test.mjs`.
 - Runtime/browser verification of the newly committed visual pass must be completed against the new deployment before calling the quality pass fully verified.
+
+
+## 17. Latest verification handoff
+
+- Latest repository commit after the research protocol and deployment-policy reconciliation: 80c030757fbb7581d079872d343b4c1e941c14d4.
+- Latest explicitly verified Vercel quality-pass deployment before the final documentation commit: dpl_BYw39fZoS3wwf7AN2mnBAc9X59rJ, READY, serving BRONZE and LUMÉRA successfully.
+- The final documentation-only commit must be redeployed for the deployment SHA to match the repository head.
+- Runtime visual QA is still limited to HTTP/source verification in this session; a real browser screenshot/interaction pass remains the next verification upgrade.
