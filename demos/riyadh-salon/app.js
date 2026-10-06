@@ -11,4 +11,4 @@ $("#sheetChoose").addEventListener("click",closeSheet);
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!sheet.classList.contains("hidden"))closeSheet()});
 $$(".filter-wrap button").forEach(tab=>tab.addEventListener("click",()=>{const f=tab.dataset.filter;$$(".filter-wrap button").forEach(x=>x.classList.remove("active"));tab.classList.add("active");$$(".ritual").forEach(item=>item.hidden=f!=="all"&&item.dataset.category!==f)}));
 selected.addEventListener("click",()=>$("#rituals").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"}));
-$("#copyMessage").addEventListener("click",async()=>{try{await navigator.clipboard.writeText(makeMessage());status.textContent="تم نسخ رسالة الحجز — جاهزة للصقها في واتساب."}catch{status.textContent="تعذر النسخ تلقائياً؛ حددي الرسالة وانسخيها يدوياً."}});\n
+$("#copyMessage").addEventListener("click",async()=>{try{await navigator.clipboard.writeText(makeMessage());status.textContent="تم نسخ رسالة الحجز — جاهزة للصقها في واتساب."}catch{status.textContent="تعذر النسخ تلقائياً؛ حددي الرسالة وانسخيها يدوياً."}});
