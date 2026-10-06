@@ -747,3 +747,24 @@ The project design system and Saudi/RTL truth constraints remain authoritative w
 ### Next action
 
 Deploy the current branch, run HTTP/runtime checks for the public root and VANTA, then perform the available browser/source red-team pass. After that, re-open BRONZE and LUMÉRA against the Refero-led visual bar and decide whether they need the same system-level correction.
+
+## 2026-10-06 — MATLA coffee roastery demo
+
+- Added a fifth field-sales demo at `demos/riyadh-roastery/`: **مَطْلَع / MATLA Roastery**, a fictional contemporary Riyadh roastery.
+- The supplied **Forner — Style Reference** was read in full and translated into original decisions: bone/roast palette, flat paper surfaces, hairlines, sharp geometry, generous whitespace, restrained serif annotation, and product-as-artifact presentation.
+- The site deliberately does **not** copy Forner's layout, copy, images, brand identity, or proprietary type. The coffee-specific composition is: product bag + roast log + origin selector + roast philosophy + bean field + brew notes + contextual enquiry.
+- Added local SVG artwork for the fictional bag and bean field to avoid unreliable remote imagery and keep the visual system coherent.
+- Product selector updates origin, process, roast, tasting notes, brew fit and demo price. Brew selector updates starting recipe. Enquiry action copies a contextual message only; there is no fake checkout, phone number, WhatsApp destination, review, branch or award.
+- Added `docs/ROASTERY_REFERO_DIRECTION.md` and a MATLA entry in `docs/RESEARCH_SWEEP_LEDGER.md`.
+- Updated the public portfolio root to expose MATLA as the fifth selected demo.
+- Extended `tests/demo-safety.test.mjs` with MATLA safety, truth, no-menu, RTL, noindex and responsive-system checks.
+
+### Verification
+
+- Local `node --check demos/riyadh-roastery/app.js` passed.
+- Local static checks confirmed demo labeling, local SVG assets, no placeholder phone destination, no digital-menu workflow, 1100px responsive breakpoint, and reduced-motion coverage.
+- Real browser screenshot/interaction QA is **not verified** in the current environment. Chromium/Playwright navigation is blocked by the execution environment, and WeasyPrint could not render the CSS grid document reliably. Do not claim screenshot inspection.
+
+### Next action
+
+Deploy the current branch and run HTTP checks for the public portfolio and MATLA demo. If browser tooling becomes available, perform a full 360/390/768/1440 visual and interaction pass before calling the demo fully verified.
