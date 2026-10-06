@@ -10,9 +10,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="../../styles/site-quality.css">
 </head>
-<body>
+<body class="quality-reference">
 <a class="skip-link" href="#content">تجاوز إلى المحتوى</a>
 <div class="demo-bar"><span>DEMO / نموذج تجريبي</span><span>الرياض · هوية افتراضية</span><span>لا توجد طلبات دفع أو بيانات تشغيلية</span></div>
 <header class="site-header">
@@ -30,7 +30,7 @@
   </div>
   <div class="hero-art" aria-label="تكوين بصري لمنتج مَطْلَع التجريبي">
     <div class="hero-index">MATLA / ROAST LOG</div>
-    <div class="bag-wrap"><img src="assets/bag.svg" alt="كيس قهوة تجريبي من مَطْلَع" width="700" height="900"></div>
+    <div class="bag-wrap"><img src="assets/bag.svg" alt="كيس قهوة تجريبي من مَطْلَع" width="700" height="900" fetchpriority="high" decoding="async"></div>
     <div class="roast-sheet" aria-label="ورقة سجل تحميص تجريبية"><span>ROAST LOG / 03</span><strong>التحميص ليس لونًا.</strong><strong>هو قرار في كل دفعة.</strong><i></i><small>TIME / 11:42 — 12:18</small><small>PROFILE / حلو · واضح · متزن</small><small>CUP / ياسمين · خوخ · سكر</small><b>مَطْلَع</b></div>
     <div class="hero-note">كل كيس يحمل<br>سبب وجوده.</div>
   </div>
@@ -45,7 +45,7 @@
       <button class="origin-tab" role="tab" aria-selected="false" aria-controls="origin-panel" data-origin="brazil"><span class="origin-number">03</span><span><strong>ميناس</strong><small>البرازيل / دافئ</small></span><span class="origin-arrow" aria-hidden="true">↙</span></button>
     </div>
     <article class="origin-panel" id="origin-panel" role="tabpanel" tabindex="0">
-      <div class="origin-product"><div class="product-art"><img id="product-image" src="assets/bag.svg" alt="كيس قهوة مَطْلَع — إثيوبيا قوجي" width="700" height="900"></div><div class="product-caption"><span id="product-code">MATLA / 001</span><span id="product-weight">250 G</span></div></div>
+      <div class="origin-product"><div class="product-art"><img id="product-image" src="assets/bag.svg" alt="كيس قهوة مَطْلَع — إثيوبيا قوجي" width="700" height="900" loading="lazy" decoding="async"></div><div class="product-caption"><span id="product-code">MATLA / 001</span><span id="product-weight">250 G</span></div></div>
       <div class="origin-detail">
         <div class="detail-top"><span id="product-origin">إثيوبيا · قوجي</span><span id="product-roast">حمصة فاتحة</span></div>
         <h3 id="product-name">قوجي</h3>
@@ -65,7 +65,7 @@
 </section>
 
 <section class="beans-section" aria-labelledby="beans-title">
-  <div class="beans-art"><img src="assets/beans.svg" alt="حبوب قهوة محمصة في تكوين تجريدي بلون البن" width="1200" height="700" loading="lazy"><span>THE ROASTED BEAN / MATLA</span></div>
+  <div class="beans-art"><img src="assets/beans.svg" alt="حبوب قهوة محمصة في تكوين تجريدي بلون البن" width="1200" height="700" loading="lazy" decoding="async"><span>THE ROASTED BEAN / MATLA</span></div>
   <div class="beans-copy"><span class="section-meta">A SMALL BATCH, NOT A BIG CLAIM</span><h2 id="beans-title">المنتج الحقيقي<br><em>هو ما يبقى في الفنجان.</em></h2><p>لهذا لا نحتاج إلى جدار من الادعاءات. نعرض المنشأ، المعالجة، الإيحاءات وطريقة التحضير المقترحة، ثم نترك لك مساحة التجربة.</p><a class="text-link" href="#brew">انتقل إلى طقوس التحضير ↙</a></div>
 </section>
 
