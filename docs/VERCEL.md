@@ -13,12 +13,18 @@ Use the working branch for preview deployments. Do not reconnect another reposit
 
 For explicit verification of a branch commit, a fresh Vercel deployment may be created from the linked Git source using the Vercel deployment integration.
 
-Latest verified quality-pass deployment:
+Latest verified deployment:
 
-- Deployment: dpl_BYw39fZoS3wwf7AN2mnBAc9X59rJ
-- Commit: f784ab97eb197eb91f5b58b07e7d2844ff5ade06
+- Deployment: dpl_3sdMGja3coL6jZFZu7g9g1u5BL6u
+- Commit: 8b78da26c58260764cb7477c0ae7a7097d70a34e
+- State: READY
+- Public preview: demo-site-mgigg9ptb-midosd2s-projects.vercel.app
+- Public root is the sales portfolio and does not load Supabase authentication.
+- The authenticated Growth Studio workspace is isolated at /studio.html and is noindex/nofollow.
 - State: READY
 - Branch: refactor/website-growth-platform
+
+Vercel project protection check: password protection, SSO protection, and trusted IP protection are disabled at project level. The public demo routes are therefore intended to be directly viewable.
 
 ## Security
 
