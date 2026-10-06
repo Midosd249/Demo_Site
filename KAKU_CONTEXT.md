@@ -656,3 +656,18 @@ High-signal implementation references inspected included Start Bootstrap Agency 
 - Latest explicitly verified Vercel quality-pass deployment before the final documentation commit: dpl_BYw39fZoS3wwf7AN2mnBAc9X59rJ, READY, serving BRONZE and LUMÉRA successfully.
 - The final documentation-only commit must be redeployed for the deployment SHA to match the repository head.
 - Runtime visual QA is still limited to HTTP/source verification in this session; a real browser screenshot/interaction pass remains the next verification upgrade.
+
+
+## 2026-10-06 — CLINIC + public-access milestone
+
+- Completed a third field-sales demo: demos/riyadh-clinic/ (NOVA Dental & Aesthetics).
+- Clinic direction is intentionally different from BRONZE and LUMÉRA: calm medical editorial, service-by-intent, doctor credibility, care journey, appointment request, and truthful demo data.
+- Added a public portfolio entry point at / so prospects can open the site and browse BRONZE, LUMÉRA, and NOVA without entering the Growth Studio workspace.
+- Moved the authenticated workspace shell to /studio.html and marked it noindex/nofollow; the public portfolio does not load Supabase or require login.
+- Vercel project protection is currently disabled at project level; the remaining access gate was the application workspace itself, not Vercel deployment protection.
+- Added clinic/public-access regression coverage and extended CI to syntax-check demo JavaScript plus run the demo safety test.
+- Clinic research is recorded in docs/RESEARCH_SWEEP_LEDGER.md.
+- Public demo pages remain noindex because they are portfolio exemplars, while the public root is the discoverable sales surface.
+
+### Current verification limitation
+The repository now has CI coverage for the new demo/test paths, but this session still requires the new Vercel deployment to complete and runtime fetch checks to be repeated against the latest commit. Interactive browser screenshot/interaction QA remains separate from HTTP/source verification.
