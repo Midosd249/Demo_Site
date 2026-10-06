@@ -42,3 +42,27 @@ test("completed demos keep explicit DEMO labeling", () => {
   assert.match(read("demos/riyadh-barber/index.html"), /DEMO/);
   assert.match(read("demos/riyadh-salon/index.html"), /DEMO/);
 });
+
+
+test("clinic demo uses the premium visual system instead of a text-first template stack", () => {
+  const clinic = read("demos/riyadh-clinic/index.html");
+  const css = read("demos/riyadh-clinic/styles.css");
+  const js = read("demos/riyadh-clinic/app.js");
+
+  assert.match(clinic, /class="hero-stage"/);
+  assert.match(clinic, /class="floating-nav"/);
+  assert.match(clinic, /data-reveal/);
+  assert.match(clinic, /class="service-stage"/);
+  assert.match(clinic, /class="appointment-dock"/);
+  assert.match(css, /position:sticky/);
+  assert.match(css, /clip-path/);
+  assert.match(css, /mix-blend-mode/);
+  assert.match(css, /@keyframes/);
+  assert.match(js, /IntersectionObserver/);
+  assert.match(js, /prefers-reduced-motion/);
+});
+
+test("public portfolio has no fake contact destination", () => {
+  const index = read("index.html");
+  assert.doesNotMatch(index, /hello@example\.com/);
+});
