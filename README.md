@@ -2,6 +2,10 @@
 
 Arabic-first, RTL, mobile-first operating platform for Saudi/GCC SMB websites and digital growth work.
 
+## Continuity
+
+**Read `KAKU_CONTEXT.md` first when resuming work in a new session.** It is the canonical project handoff: mission, current verified state, product boundaries, roadmap, decisions, verification checklist, and next execution queue.
+
 ## Primary workflow
 
 Create Website → Edit → Preview → Publish → Audit SEO → Improve Local Visibility → Improve AI Readiness → Record Competitors → Generate Client Report → Manage Client.
@@ -35,7 +39,7 @@ The current builder is an expandable section editor, not a drag-and-drop canvas.
 
 The existing Supabase project remains additive. Growth tables are `growth_websites`, `seo_audits`, `growth_clients`, `growth_reports`, and `competitors`, protected by tenant-scoped RLS. Legacy menu tables are preserved for history and are not part of the primary product navigation.
 
-See `docs/DATA.md` for the data contract and `docs/VERCEL.md` for deployment policy.
+See `docs/DATA.md` for the data contract, `docs/VERCEL.md` for deployment policy, and `KAKU_CONTEXT.md` for the full roadmap and session handoff.
 
 ## Local test
 
