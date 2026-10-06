@@ -20,9 +20,12 @@ jobs:
           set -e
           find src -type f -name '*.js' -print0 | xargs -0 -n1 node --check
           node --check platform.js
+          find demos -type f -name '*.js' -print0 | xargs -0 -n1 node --check
+          node --test tests/demo-safety.test.mjs
       - name: Validate core files
         run: |
           test -s index.html
+          test -s demos/riyadh-clinic/index.html
           test -s README.md
           test -s AGENTS.md
           test -s styles/growth.css
