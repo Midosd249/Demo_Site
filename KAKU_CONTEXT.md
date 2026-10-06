@@ -702,3 +702,45 @@ The submitted phone screenshot exposed a genuine quality failure in NOVA: the de
 
 ### Next execution
 Do not add another sector yet. Re-open BRONZE and LUMÉRA against the new visual bar, then apply the same red-team correction where their phone composition is still too template-like. After that, proceed to AUTO with the stronger visual system.
+
+
+## 2026-10-06 — VANTA AUTO / Refero-led build
+
+- Started the fourth field-sales sector: automotive detailing / ceramic / paint correction.
+- Added `demos/riyadh-auto/` as **VANTA Auto Care**, a Refero-led original design rather than a generic detailing template.
+- Refero was used as a system source: automotive theater, dark/light surface rhythm, typography scale, hairline structure, minimal UI, controlled accent, specimen metadata, and comparison interaction.
+- The primary conversion is **طلب تسعيرة**.
+- Signature interaction: touch/keyboard before-after comparison slider.
+- Quote builder generates a copy-ready Arabic request from vehicle type + service selection; no unverified phone or WhatsApp destination is embedded.
+- Added `docs/AUTO_REFERO_DIRECTION.md` with the Keep / Adapt / Reject decisions and implementation contract.
+- Added the AUTO sweep to `docs/RESEARCH_SWEEP_LEDGER.md`.
+- Added regression coverage for the AUTO demo in `tests/demo-safety.test.mjs`.
+- Updated the public portfolio root to expose VANTA as the fourth selected demo.
+
+### Refero operating upgrade
+
+For new demos, Refero is now treated as a **design-system research authority**, not merely a moodboard:
+- composition grammar
+- typography roles and scale
+- token discipline
+- surface hierarchy
+- component geometry
+- interaction patterns
+- responsive behavior
+- motion language
+- image treatment
+- quality gate
+
+The project design system and Saudi/RTL truth constraints remain authoritative where Refero and project requirements conflict.
+
+### Current verification
+
+- New AUTO files are committed on `refactor/website-growth-platform`.
+- New JavaScript syntax was checked locally with `node --check`.
+- Source-level demo safety coverage was extended.
+- GitHub workflow-run connector currently exposes no workflow runs for the branch head, so hosted CI is **not verified** for this milestone.
+- Real browser screenshot/interaction QA remains unverified in the current environment.
+
+### Next action
+
+Deploy the current branch, run HTTP/runtime checks for the public root and VANTA, then perform the available browser/source red-team pass. After that, re-open BRONZE and LUMÉRA against the Refero-led visual bar and decide whether they need the same system-level correction.
