@@ -6,6 +6,10 @@
 
 web
 
+## Stack
+
+delegated: existing static HTML/CSS/JavaScript portfolio architecture
+
 ## Users
 
 Primary users are Saudi/GCC small-business owners and the people presenting websites to them during sales conversations. The end customer is a local service-business visitor who needs to understand the offer quickly and take a conversion action on mobile.
@@ -29,6 +33,10 @@ Confirmed capabilities include static website demos with responsive HTML/CSS/Jav
 ## Evidence on Hand
 
 Existing website portfolio documentation and the BRONZE barber demo establish the current website-only direction. The repository does not contain verified client testimonials, performance metrics, or production customer data; future demos must not invent them.
+
+## Brand Commitments
+
+Refero Styles is a permanent, high-authority design research source for this repository. New visual work must use Refero to extract typography roles, token discipline, composition, component behavior, interaction language, responsive rules, and visual pacing. Refero remains a research source rather than a license to copy brand identity, proprietary assets, source code, or distinctive layouts.
 
 ## Product Principles
 
