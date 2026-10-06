@@ -77,3 +77,23 @@ test("all sales demos prioritize phone composition before tablet widths", () => 
     assert.match(read(file), /@media\s*\(max-width:1100px\)/);
   }
 });
+
+
+test("auto demo uses the Refero-led automotive visual system and truthful quote flow", () => {
+  const auto = read("demos/riyadh-auto/index.html");
+  const css = read("demos/riyadh-auto/styles.css");
+  const js = read("demos/riyadh-auto/app.js");
+  assert.match(auto, /VANTA/);
+  assert.match(auto, /dir="rtl"/);
+  assert.match(auto, /noindex,nofollow/);
+  assert.match(auto, /data-compare/);
+  assert.match(auto, /طلب تسعيرة/);
+  assert.match(auto, /DEMO/);
+  assert.doesNotMatch(auto.toLowerCase(), /digital menu|qr menu|menu system/);
+  assert.match(css, /@media\(max-width:1100px\)/);
+  assert.match(css, /--acid:/);
+  assert.match(css, /clip-path/);
+  assert.doesNotMatch(css, /box-shadow:inset 3px/);
+  assert.match(js, /navigator\.clipboard/);
+  assert.match(js, /prefers-reduced-motion/);
+});
