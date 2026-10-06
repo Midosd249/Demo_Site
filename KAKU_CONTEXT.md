@@ -675,6 +675,13 @@ High-signal implementation references inspected included Start Bootstrap Agency 
 The repository now has CI coverage for the new demo/test paths, but this session still requires the new Vercel deployment to complete and runtime fetch checks to be repeated against the latest commit. Interactive browser screenshot/interaction QA remains separate from HTTP/source verification.
 
 
+## 2026-10-06 — Refero Styles permanent reference
+
+- `docs/REFERO_STYLES_REFERENCE.md` is now the permanent operating manual for Refero Styles research.
+- `docs/NEW_CHAT_HANDOFF_PROMPT.md` contains the canonical prompt for starting a fresh ChatGPT session without losing repository continuity.
+- New sessions must read the Refero reference and revisit the live source before meaningful visual work.
+- Latest documentation validation run before the handoff prompt is green; the latest handoff-prompt validation run is currently in progress.
+
 ## 2026-10-06 — Visual red-team correction
 
 The submitted phone screenshot exposed a genuine quality failure in NOVA: the desktop composition survived into a narrow showcase viewport, creating a giant image followed by a compressed text column. The diagnosis is responsive composition, not copy.
