@@ -1541,3 +1541,183 @@ address {
     border: 1px solid ButtonText;
   }
 }
+
+
+/* ==========================================================================
+   19. Mobile Menu, Scroll Reveal & Floating Actions
+   ========================================================================== */
+
+.site-header__container {
+  position: relative;
+}
+
+.site-header__nav.is-open {
+  position: absolute;
+  inset-block-start: calc(100% + 1px);
+  inset-inline: 0;
+  z-index: 10;
+  padding: var(--space-4);
+  border-block-end: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(18px);
+}
+
+.site-header__nav.is-open .site-header__menu {
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-1);
+}
+
+.site-header__nav.is-open .site-header__link {
+  width: 100%;
+  padding-inline: var(--space-4);
+  border-radius: var(--radius-md);
+}
+
+.site-header__nav.is-open .site-header__link:hover,
+.site-header__nav.is-open .site-header__link--active {
+  background: var(--color-surface-muted);
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.5s var(--ease-standard),
+    transform 0.5s var(--ease-standard);
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero__dots {
+  position: absolute;
+  inset-block-end: var(--space-8);
+  inset-inline-start: 50%;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  transform: translateX(-50%);
+}
+
+.hero__dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition:
+    width var(--duration-base) var(--ease-standard),
+    border-color var(--duration-base) var(--ease-standard),
+    background-color var(--duration-base) var(--ease-standard);
+}
+
+.hero__dot:hover,
+.hero__dot--active {
+  width: 28px;
+  border-color: var(--color-white);
+  border-radius: var(--radius-pill);
+  background: var(--color-white);
+}
+
+.brands__slider {
+  direction: ltr;
+}
+
+.brands__track {
+  animation: none;
+  will-change: transform;
+}
+
+.brands__slider .brand-card {
+  direction: rtl;
+}
+
+/* WhatsApp Float Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 99;
+}
+
+.whatsapp-float a {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #25D366;
+  color: white;
+  display: grid;
+  place-items: center;
+  font-size: 32px;
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-float a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 15px 35px rgba(37, 211, 102, 0.5);
+}
+
+/* Scroll Progress Bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-primary-dark));
+  width: 0%;
+  z-index: 9999;
+  transition: width 0.1s ease;
+}
+
+@media (min-width: 768px) {
+  .site-header__nav.is-open {
+    position: static;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .site-header__nav.is-open .site-header__menu {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-6);
+  }
+
+  .site-header__nav.is-open .site-header__link {
+    width: auto;
+    padding-inline: 0;
+    background: transparent;
+  }
+
+  .site-header__nav.is-open .site-header__link:hover,
+  .site-header__nav.is-open .site-header__link--active {
+    background: transparent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .hero__dot {
+    transition: none;
+  }
+
+  .whatsapp-float a,
+  .whatsapp-float a:hover {
+    transform: none;
+    transition: none;
+  }
+}
