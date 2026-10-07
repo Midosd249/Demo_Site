@@ -1726,3 +1726,101 @@ address {
     transition: none;
   }
 }
+
+/* ==========================================================================
+   17. Final Interaction Polish
+   ========================================================================== */
+
+/* Scroll Reveal Animation */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero Dots */
+.hero__dots {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 2;
+}
+
+.hero__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero__dot--active {
+  background: #dc2626;
+  border-color: #dc2626;
+  transform: scale(1.2);
+}
+
+.hero__dot:hover {
+  border-color: white;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Mobile Menu */
+@media (max-width: 767px) {
+  .site-header__nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border-top: 1px solid var(--color-border);
+    box-shadow: var(--shadow-lg);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  .site-header__nav.is-open {
+    display: block;
+    max-height: 400px;
+  }
+
+  .site-header__menu {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+
+  .site-header__item {
+    width: 100%;
+  }
+
+  .site-header__link {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Final reduced-motion guard for newly added transitions */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal,
+  .hero__dot,
+  .site-header__nav {
+    transition-duration: 0.01ms !important;
+  }
+
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
