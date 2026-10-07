@@ -554,6 +554,10 @@ address {
   background-image: url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=2200&q=85");
 }
 
+.hero__slide:nth-child(3) {
+  background-image: url("https://images.unsplash.com/photo-1493238792000-8113da705763?auto=format&fit=crop&w=2200&q=85");
+}
+
 .hero__overlay {
   z-index: 1;
   background:
@@ -1552,6 +1556,7 @@ address {
 }
 
 .site-header__nav.is-open {
+  display: block;
   position: absolute;
   inset-block-start: calc(100% + 1px);
   inset-inline: 0;
