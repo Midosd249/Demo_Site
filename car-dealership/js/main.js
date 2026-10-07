@@ -1,14 +1,410 @@
-document.addEventListener("DOMContentLoaded",()=>{const $=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>[...c.querySelectorAll(s)];const reduced=matchMedia("(prefers-reduced-motion: reduce)").matches;
-const progress=$(".scroll-progress span");const header=$(".site-header");const onScroll=()=>{const max=document.documentElement.scrollHeight-innerHeight; if(progress)progress.style.width=(max>0?scrollY/max*100:0)+"%"; if(header)header.classList.toggle("scrolled",scrollY>40)};addEventListener("scroll",onScroll,{passive:true});onScroll();
-const toggle=$(".mobile-toggle"),nav=$("#siteNav");if(toggle&&nav){toggle.addEventListener("click",()=>{const open=nav.classList.toggle("open");toggle.setAttribute("aria-expanded",String(open));toggle.setAttribute("aria-label",open?"إغلاق القائمة":"فتح القائمة")});$$("a",nav).forEach(a=>a.addEventListener("click",()=>{nav.classList.remove("open");toggle.setAttribute("aria-expanded","false");toggle.setAttribute("aria-label","فتح القائمة")}))}
-const slides=$$(".hero-slide"),dots=$$(".dot");let current=0,timer;if(slides.length){const show=i=>{current=(i+slides.length)%slides.length;slides.forEach((s,n)=>s.classList.toggle("active",n===current));dots.forEach((d,n)=>{d.classList.toggle("active",n===current);d.setAttribute("aria-selected",String(n===current))})};dots.forEach(d=>d.addEventListener("click",()=>show(Number(d.dataset.slide))));if(!reduced)timer=setInterval(()=>show(current+1),5500);document.addEventListener("visibilitychange",()=>{if(document.hidden){clearInterval(timer)}else if(!reduced)timer=setInterval(()=>show(current+1),5500)})}
-const tabs=$$(".tab-btn"),buy=$("#buyForm"),rent=$("#rentForm");tabs.forEach(btn=>btn.addEventListener("click",()=>{const isBuy=btn.dataset.tab==="buy";tabs.forEach(b=>{const active=b===btn;b.classList.toggle("active",active);b.setAttribute("aria-selected",String(active))});buy?.classList.toggle("hidden",!isBuy);rent?.classList.toggle("hidden",isBuy)}));
-const setStatus=(el,msg)=>{if(el)el.textContent=msg};
-buy?.addEventListener("submit",e=>{e.preventDefault();const d=Object.fromEntries(new FormData(buy));location.href="inventory.html?make="+encodeURIComponent(d.make||"")+"&price="+encodeURIComponent(d.price||"")+"&year="+encodeURIComponent(d.year||"")});
-rent?.addEventListener("submit",e=>{e.preventDefault();const d=Object.fromEntries(new FormData(rent));if(d.pickup>d.return){setStatus($("#searchStatus"),"تأكد أن تاريخ الإعادة بعد تاريخ الاستلام.");return}location.href="rental.html?type="+encodeURIComponent(d.type||"")+"&pickup="+encodeURIComponent(d.pickup)+"&return="+encodeURIComponent(d.return)});
-$$("[data-action='save']").forEach(btn=>btn.addEventListener("click",()=>{btn.classList.toggle("saved");const icon=$("i",btn);icon?.classList.toggle("fa-regular");icon?.classList.toggle("fa-solid");setStatus($("#searchStatus"),btn.classList.contains("saved")?"تم حفظ السيارة في هذه الجلسة التجريبية.":"تمت إزالة السيارة من المحفوظات التجريبية.")}));
-$$("[data-action='share']").forEach(btn=>btn.addEventListener("click",async()=>{const card=btn.closest(".car-card"),name=$("h3",card)?.textContent||"سيارة";try{await navigator.clipboard.writeText(location.href+"#"+encodeURIComponent(name));setStatus($("#searchStatus"),"تم نسخ رابط المشاركة.");}catch{setStatus($("#searchStatus"),"تعذر النسخ تلقائيًا. استخدم مشاركة المتصفح.")}}));
-const inventory=$("#inventoryGrid");if(inventory){const cars=[["Toyota","Camry 2026","Sedan","85,000","0 كم","https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=1000&q=82"],["Hyundai","Elantra 2026","Sedan","65,000","0 كم","https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1000&q=82"],["Ford","Explorer 2025","SUV","145,000","15,000 كم","https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=1000&q=82"],["BMW","520i 2026","Luxury","245,000","0 كم","https://images.unsplash.com/photo-1555215695-3004980adade?auto=format&fit=crop&w=1000&q=82"]];const params=new URLSearchParams(location.search);const make=$("#filterMake"),type=$("#filterType"),sort=$("#sortCars");if(make)make.value=params.get("make")||"";const render=()=>{let list=cars.filter(c=>(!make?.value||c[0]===make.value)&&(!type?.value||c[2]===type.value));if(sort?.value==="price-asc")list.sort((a,b)=>parseInt(a[3].replace(/,/g,""))-parseInt(b[3].replace(/,/g,"")));if(sort?.value==="price-desc")list.sort((a,b)=>parseInt(b[3].replace(/,/g,""))-parseInt(a[3].replace(/,/g,"")));inventory.innerHTML=list.map(c=>'<article class="car-card"><div class="car-image"><img src="'+c[5]+'" alt="'+c[0]+" "+c[1]+'" loading="lazy" decoding="async"><span class="car-badge">DEMO</span></div><div class="car-body"><div class="car-top"><div><span class="muted">'+c[0]+'</span><h3>'+c[1]+'</h3></div><strong>'+c[3]+' <small>ر.س</small></strong></div><div class="specs"><span>'+c[4]+'</span><span>أوتوماتيك</span><span>بنزين</span></div><a href="contact.html?car='+encodeURIComponent(c[0]+" "+c[1])+'" class="card-cta">استفسر عن السيارة <span>↗</span></a></div></article>').join("");$("#inventoryEmpty")?.classList.toggle("hidden",!list.length)};[make,type,sort].forEach(x=>x?.addEventListener("change",render));render()}
-const rentalPage=$("#rentalPageForm");rentalPage?.addEventListener("submit",e=>{e.preventDefault();const d=Object.fromEntries(new FormData(rentalPage));if(d.pickup>d.return){setStatus($("#rentalStatus"),"تأكد أن تاريخ الإعادة بعد تاريخ الاستلام.");return}setStatus($("#rentalStatus"),"تم تجهيز طلبك التجريبي. يمكنك الآن التواصل عبر واتساب.");const text="طلب تأجير تجريبي\nالفئة: "+d.type+"\nالاستلام: "+d.pickup+"\nالإعادة: "+d.return+"\nملاحظات: "+(d.note||"—");navigator.clipboard?.writeText(text).catch(()=>{});});
-const contact=$("#contactForm");const carField=$("#contactCar");if(carField)carField.value=new URLSearchParams(location.search).get("car")||"";contact?.addEventListener("submit",e=>{e.preventDefault();const d=Object.fromEntries(new FormData(contact));const text="استفسار تجريبي من "+d.name+"\nالسيارة/الخدمة: "+d.car+"\nالهاتف: "+d.phone+"\nالرسالة: "+d.message;navigator.clipboard?.writeText(text).then(()=>setStatus($("#contactStatus"),"تم تجهيز الرسالة ونسخها. هذه نسخة DEMO ولا يتم إرسالها.")).catch(()=>setStatus($("#contactStatus"),"تم تجهيز الرسالة. هذه نسخة DEMO ولا يتم إرسالها."))});
-const reveal=$$(".car-card,.benefit-grid article,.service-rows article");if("IntersectionObserver"in window&&!reduced){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.style.opacity="1";e.target.style.transform="none";io.unobserve(e.target)}}),{threshold:.08});reveal.forEach((el,i)=>{el.style.opacity="0";el.style.transform="translateY(18px)";el.style.transition="opacity .5s ease "+Math.min(i*.04,.24)+"s,transform .5s ease "+Math.min(i*.04,.24)+"s";io.observe(el)})}});
+/* ==========================================================================
+   RIYADH CARS — INTERACTION LAYER
+   Vanilla JavaScript. No dependencies.
+   ========================================================================== */
+
+(() => {
+  "use strict";
+
+  const $ = (selector, context = document) => context.querySelector(selector);
+  const $$ = (selector, context = document) => [...context.querySelectorAll(selector)];
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const debounce = (callback, delay = 50) => {
+    let timer;
+    return (...args) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => callback(...args), delay);
+    };
+  };
+
+  /* ==========================================================================
+     Header scroll state + progress bar
+     ========================================================================== */
+
+  const header = $(".site-header");
+  const progress = $(".scroll-progress");
+
+  const updateScrollUI = () => {
+    const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+    const percent = maxScroll > 0 ? (window.scrollY / maxScroll) * 100 : 0;
+
+    header?.classList.toggle("scrolled", window.scrollY > 50);
+
+    if (progress) {
+      progress.style.width = Math.min(Math.max(percent, 0), 100) + "%";
+    }
+  };
+
+  const handleScroll = debounce(updateScrollUI, 50);
+  window.addEventListener("scroll", handleScroll, { passive: true });
+  window.addEventListener("resize", handleScroll, { passive: true });
+  updateScrollUI();
+
+  /* ==========================================================================
+     Mobile menu
+     ========================================================================== */
+
+  const menuToggle = $(".site-header__toggle");
+  const navigation = $("#site-navigation");
+
+  const closeMenu = () => {
+    if (!menuToggle || !navigation) return;
+    navigation.classList.remove("is-open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "فتح قائمة التنقل");
+    menuToggle.innerHTML = '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
+  };
+
+  const openMenu = () => {
+    if (!menuToggle || !navigation) return;
+    navigation.classList.add("is-open");
+    menuToggle.setAttribute("aria-expanded", "true");
+    menuToggle.setAttribute("aria-label", "إغلاق قائمة التنقل");
+    menuToggle.innerHTML = '<i class="fa-solid fa-xmark" aria-hidden="true"></i>';
+  };
+
+  menuToggle?.addEventListener("click", () => {
+    navigation?.classList.contains("is-open") ? closeMenu() : openMenu();
+  });
+
+  navigation?.addEventListener("click", (event) => {
+    if (event.target.closest("a")) closeMenu();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeMenu();
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 768) closeMenu();
+  }, { passive: true });
+
+  /* ==========================================================================
+     Smooth internal navigation
+     ========================================================================== */
+
+  document.addEventListener("click", (event) => {
+    const link = event.target.closest('a[href^="#"]');
+    if (!link) return;
+
+    const id = link.getAttribute("href");
+    if (!id || id === "#") return;
+
+    const target = document.querySelector(id);
+    if (!target) return;
+
+    event.preventDefault();
+
+    const offset = (header?.getBoundingClientRect().height || 0) + 12;
+    const top = window.scrollY + target.getBoundingClientRect().top - offset;
+
+    window.scrollTo({
+      top: Math.max(0, top),
+      behavior: reducedMotion ? "auto" : "smooth"
+    });
+
+    history.replaceState(null, "", id);
+  });
+
+  /* ==========================================================================
+     Hero slider — 3 slides, 5-second interval, fade + dots
+     ========================================================================== */
+
+  const hero = $(".hero");
+  const heroSlides = $$(".hero__slide", hero || document);
+
+  if (hero && heroSlides.length > 1) {
+    const dots = document.createElement("div");
+    dots.className = "hero__dots";
+    dots.setAttribute("role", "tablist");
+    dots.setAttribute("aria-label", "التنقل بين شرائح العرض");
+
+    heroSlides.forEach((_, index) => {
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "hero__dot";
+      dot.dataset.slide = index;
+      dot.setAttribute("role", "tab");
+      dot.setAttribute("aria-label", "الشريحة " + (index + 1));
+      dot.setAttribute("aria-selected", index === 0 ? "true" : "false");
+      dots.appendChild(dot);
+    });
+
+    hero.appendChild(dots);
+
+    let current = 0;
+    let timer = null;
+
+    const showSlide = (index, restart = false) => {
+      current = (index + heroSlides.length) % heroSlides.length;
+
+      heroSlides.forEach((slide, slideIndex) => {
+        slide.classList.toggle("hero__slide--active", slideIndex === current);
+      });
+
+      $$(".hero__dot", dots).forEach((dot, dotIndex) => {
+        const active = dotIndex === current;
+        dot.classList.toggle("hero__dot--active", active);
+        dot.setAttribute("aria-selected", String(active));
+      });
+
+      if (restart && !reducedMotion) {
+        clearInterval(timer);
+        timer = setInterval(() => showSlide(current + 1), 5000);
+      }
+    };
+
+    dots.addEventListener("click", (event) => {
+      const dot = event.target.closest(".hero__dot");
+      if (dot) showSlide(Number(dot.dataset.slide), true);
+    });
+
+    const start = () => {
+      if (reducedMotion) return;
+      clearInterval(timer);
+      timer = setInterval(() => showSlide(current + 1), 5000);
+    };
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) clearInterval(timer);
+      else start();
+    });
+
+    showSlide(0);
+    start();
+  }
+
+  /* ==========================================================================
+     Search tabs — شراء / تأجير
+     ========================================================================== */
+
+  const searchTabs = $$("[data-search-tab]");
+  const searchPanels = $$("[data-search-panel]");
+
+  const activateSearchTab = (key, moveFocus = false) => {
+    searchTabs.forEach((tab) => {
+      const active = tab.dataset.searchTab === key;
+      tab.classList.toggle("search-box__tab--active", active);
+      tab.setAttribute("aria-selected", String(active));
+      tab.tabIndex = active ? 0 : -1;
+      if (active && moveFocus) tab.focus();
+    });
+
+    searchPanels.forEach((panel) => {
+      const active = panel.dataset.searchPanel === key;
+      panel.hidden = !active;
+      panel.classList.toggle("search-box__panel--active", active);
+    });
+  };
+
+  searchTabs.forEach((tab, index) => {
+    tab.addEventListener("click", () => activateSearchTab(tab.dataset.searchTab));
+
+    tab.addEventListener("keydown", (event) => {
+      if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
+      event.preventDefault();
+
+      let next = index;
+      if (event.key === "ArrowLeft") next = (index + 1) % searchTabs.length;
+      if (event.key === "ArrowRight") next = (index - 1 + searchTabs.length) % searchTabs.length;
+      if (event.key === "Home") next = 0;
+      if (event.key === "End") next = searchTabs.length - 1;
+
+      activateSearchTab(searchTabs[next].dataset.searchTab, true);
+    });
+  });
+
+  if (searchTabs.length) {
+    const initial = searchTabs.find((tab) => tab.getAttribute("aria-selected") === "true");
+    activateSearchTab(initial?.dataset.searchTab || searchTabs[0].dataset.searchTab);
+  }
+
+  /* ==========================================================================
+     Scroll reveal — Intersection Observer
+     ========================================================================== */
+
+  const revealTargets = $$(".car-card, .service-card, .brand-card");
+
+  if (!reducedMotion && "IntersectionObserver" in window) {
+    revealTargets.forEach((element) => element.classList.add("scroll-reveal"));
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    }, {
+      root: null,
+      rootMargin: "0px 0px -8% 0px",
+      threshold: 0.08
+    });
+
+    revealTargets.forEach((element) => revealObserver.observe(element));
+  }
+
+  /* ==========================================================================
+     Counter animation — supports [data-counter="1200"]
+     ========================================================================== */
+
+  const counters = $$("[data-counter]");
+
+  const animateCounter = (element) => {
+    const target = Number(element.dataset.counter);
+    if (!Number.isFinite(target)) return;
+
+    if (reducedMotion) {
+      element.textContent = target.toLocaleString("en-US");
+      return;
+    }
+
+    const duration = Number(element.dataset.counterDuration) || 1400;
+    const startTime = performance.now();
+
+    const tick = (now) => {
+      const progressValue = Math.min((now - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progressValue, 3);
+      element.textContent = Math.round(target * eased).toLocaleString("en-US");
+
+      if (progressValue < 1) requestAnimationFrame(tick);
+    };
+
+    requestAnimationFrame(tick);
+  };
+
+  if ("IntersectionObserver" in window) {
+    const counterObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        animateCounter(entry.target);
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.5 });
+
+    counters.forEach((counter) => counterObserver.observe(counter));
+  } else {
+    counters.forEach(animateCounter);
+  }
+
+  /* ==========================================================================
+     Brands slider — duplicated track + Previous / Next controls
+     ========================================================================== */
+
+  const brandSlider = $("[data-brands-slider]");
+  const brandTrack = $(".brands__track", brandSlider || document);
+
+  if (brandSlider && brandTrack) {
+    const originals = [...brandTrack.children];
+
+    if (originals.length > 1) {
+      originals.forEach((card) => {
+        const clone = card.cloneNode(true);
+        clone.setAttribute("aria-hidden", "true");
+        clone.querySelectorAll("a, button").forEach((element) => {
+          element.tabIndex = -1;
+        });
+        brandTrack.appendChild(clone);
+      });
+
+      let offset = 0;
+      let setWidth = 0;
+      let cardStep = 0;
+      let lastTime = performance.now();
+      let pausedUntil = performance.now() + 1000;
+
+      const measure = () => {
+        const first = originals[0];
+        if (!first) return;
+
+        const gap = parseFloat(getComputedStyle(brandTrack).gap) || 0;
+        cardStep = first.getBoundingClientRect().width + gap;
+        setWidth = cardStep * originals.length;
+        offset = setWidth ? offset % setWidth : 0;
+        brandTrack.style.transform = "translate3d(" + (-offset) + "px, 0, 0)";
+      };
+
+      const move = (direction) => {
+        if (!cardStep) measure();
+        offset += direction * cardStep;
+        if (offset < 0) offset += setWidth;
+        if (offset >= setWidth) offset -= setWidth;
+
+        brandTrack.style.transition = reducedMotion ? "none" : "transform 0.35s ease";
+        brandTrack.style.transform = "translate3d(" + (-offset) + "px, 0, 0)";
+        pausedUntil = performance.now() + 1600;
+      };
+
+      $("[data-brands-prev]", brandSlider)?.addEventListener("click", () => move(-1));
+      $("[data-brands-next]", brandSlider)?.addEventListener("click", () => move(1));
+
+      brandSlider.addEventListener("mouseenter", () => {
+        pausedUntil = Number.POSITIVE_INFINITY;
+      });
+
+      brandSlider.addEventListener("mouseleave", () => {
+        pausedUntil = performance.now() + 600;
+      });
+
+      brandSlider.addEventListener("focusin", () => {
+        pausedUntil = Number.POSITIVE_INFINITY;
+      });
+
+      brandSlider.addEventListener("focusout", () => {
+        pausedUntil = performance.now() + 600;
+      });
+
+      const animate = (time) => {
+        const delta = Math.min(time - lastTime, 40);
+        lastTime = time;
+
+        if (!reducedMotion && time > pausedUntil && setWidth > 0) {
+          offset += delta * 0.035;
+          if (offset >= setWidth) offset -= setWidth;
+          brandTrack.style.transition = "none";
+          brandTrack.style.transform = "translate3d(" + (-offset) + "px, 0, 0)";
+        }
+
+        requestAnimationFrame(animate);
+      };
+
+      measure();
+      window.addEventListener("resize", debounce(measure, 100), { passive: true });
+      requestAnimationFrame(animate);
+    }
+  }
+
+  /* ==========================================================================
+     Favorite buttons
+     ========================================================================== */
+
+  document.addEventListener("click", (event) => {
+    const button = event.target.closest(".car-card__favorite");
+    if (!button) return;
+
+    const icon = $("i", button);
+    const saved = button.getAttribute("aria-pressed") === "true";
+    const next = !saved;
+
+    button.setAttribute("aria-pressed", String(next));
+    button.setAttribute(
+      "aria-label",
+      next ? "إزالة السيارة من المفضلة" : "إضافة السيارة للمفضلة"
+    );
+    button.classList.toggle("is-saved", next);
+    icon?.classList.toggle("fa-regular", !next);
+    icon?.classList.toggle("fa-solid", next);
+  });
+
+  /* ==========================================================================
+     WhatsApp float button
+     ========================================================================== */
+
+  const whatsapp = $(".whatsapp-float a");
+
+  if (whatsapp) {
+    whatsapp.setAttribute("target", "_blank");
+    whatsapp.setAttribute("rel", "noopener noreferrer");
+    whatsapp.setAttribute("aria-label", "تواصل معنا عبر واتساب");
+  }
+})();
