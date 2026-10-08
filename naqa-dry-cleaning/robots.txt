@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+# Demo only. Add a production sitemap only after assigning a real canonical domain.
